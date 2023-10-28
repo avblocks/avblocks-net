@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{FBB3A151-2B0B-4726-91DC-8505FACD61CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "copy_sdk", "samples\copy_sdk\copy_sdk.csproj", "{B7C00F56-BDFB-401D-931C-0A428E2BE46D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "enc_aac_adts_file", "samples\enc_aac_adts_file\enc_aac_adts_file.csproj", "{3F1C6A42-E1C0-4C4C-ABD4-94DC0D1595A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_aac_adts_file", "samples\dec_aac_adts_file\dec_aac_adts_file.csproj", "{0D260FF5-1F90-48D8-9172-9111F7E57F2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_avc_file", "samples\enc_avc_file\enc_avc_file.csproj", "{B78F9FAD-3F76-46FC-A228-A36E4514F6AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_avc_file", "samples\dec_avc_file\dec_avc_file.csproj", "{DFF3C808-C208-4938-84FE-B7035D624AD6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "info_metadata_file", "samples\info_metadata_file\info_metadata_file.csproj", "{85C3E698-6A62-4D98-861E-D39EE4BDFB6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "info_stream_file", "samples\info_stream_file\info_stream_file.csproj", "{FDBBCA0E-8AE0-44BD-AAEA-0D2685A17C5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mux_mp4_file", "samples\mux_mp4_file\mux_mp4_file.csproj", "{750627A9-EFF6-4034-9690-8DE1D6E99C27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demux_mp4_file", "samples\demux_mp4_file\demux_mp4_file.csproj", "{ABD491E0-CD77-428A-85DA-3ED2EE203532}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "re-encode", "samples\re-encode\re-encode.csproj", "{BA8FDEDC-4237-4B11-84C8-F504A887D5FE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "slideshow", "samples\slideshow\slideshow.csproj", "{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_preset_file", "samples\enc_preset_file\enc_preset_file.csproj", "{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D}.Debug|x64.ActiveCfg = Debug|x64
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D}.Debug|x64.Build.0 = Debug|x64
+		{3F1C6A42-E1C0-4C4C-ABD4-94DC0D1595A8}.Debug|x64.ActiveCfg = Debug|x64
+		{3F1C6A42-E1C0-4C4C-ABD4-94DC0D1595A8}.Debug|x64.Build.0 = Debug|x64
+		{0D260FF5-1F90-48D8-9172-9111F7E57F2C}.Debug|x64.ActiveCfg = Debug|x64
+		{0D260FF5-1F90-48D8-9172-9111F7E57F2C}.Debug|x64.Build.0 = Debug|x64
+		{B78F9FAD-3F76-46FC-A228-A36E4514F6AB}.Debug|x64.ActiveCfg = Debug|x64
+		{B78F9FAD-3F76-46FC-A228-A36E4514F6AB}.Debug|x64.Build.0 = Debug|x64
+		{DFF3C808-C208-4938-84FE-B7035D624AD6}.Debug|x64.ActiveCfg = Debug|x64
+		{DFF3C808-C208-4938-84FE-B7035D624AD6}.Debug|x64.Build.0 = Debug|x64
+		{85C3E698-6A62-4D98-861E-D39EE4BDFB6C}.Debug|x64.ActiveCfg = Debug|x64
+		{85C3E698-6A62-4D98-861E-D39EE4BDFB6C}.Debug|x64.Build.0 = Debug|x64
+		{FDBBCA0E-8AE0-44BD-AAEA-0D2685A17C5A}.Debug|x64.ActiveCfg = Debug|x64
+		{FDBBCA0E-8AE0-44BD-AAEA-0D2685A17C5A}.Debug|x64.Build.0 = Debug|x64
+		{750627A9-EFF6-4034-9690-8DE1D6E99C27}.Debug|x64.ActiveCfg = Debug|x64
+		{750627A9-EFF6-4034-9690-8DE1D6E99C27}.Debug|x64.Build.0 = Debug|x64
+		{ABD491E0-CD77-428A-85DA-3ED2EE203532}.Debug|x64.ActiveCfg = Debug|x64
+		{ABD491E0-CD77-428A-85DA-3ED2EE203532}.Debug|x64.Build.0 = Debug|x64
+		{BA8FDEDC-4237-4B11-84C8-F504A887D5FE}.Debug|x64.ActiveCfg = Debug|x64
+		{BA8FDEDC-4237-4B11-84C8-F504A887D5FE}.Debug|x64.Build.0 = Debug|x64
+		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9}.Debug|x64.ActiveCfg = Debug|x64
+		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9}.Debug|x64.Build.0 = Debug|x64
+		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}.Debug|x64.ActiveCfg = Debug|x64
+		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{3F1C6A42-E1C0-4C4C-ABD4-94DC0D1595A8} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{0D260FF5-1F90-48D8-9172-9111F7E57F2C} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{B78F9FAD-3F76-46FC-A228-A36E4514F6AB} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{DFF3C808-C208-4938-84FE-B7035D624AD6} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{85C3E698-6A62-4D98-861E-D39EE4BDFB6C} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{FDBBCA0E-8AE0-44BD-AAEA-0D2685A17C5A} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{750627A9-EFF6-4034-9690-8DE1D6E99C27} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{ABD491E0-CD77-428A-85DA-3ED2EE203532} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{BA8FDEDC-4237-4B11-84C8-F504A887D5FE} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE08AFDF-7EA5-4A0F-AD4E-C9307EF8EDE0}
+	EndGlobalSection
+EndGlobal
