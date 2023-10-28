@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' ">true</IsWindows> 
+    <IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' ">true</IsMacOS> 
+    <IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' ">true</IsLinux> 
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Platforms>x64</Platforms> 
+    <OutputPath>../../bin</OutputPath> 
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(IsLinux)' == 'true' ">
+    <TargetFrameworks>net60</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(IsMacOS)' == 'true' ">
+    <TargetFrameworks>net60</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(IsWindows)' == 'true' ">
+    <TargetFrameworks>net60;net48</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsWindows Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' ">true</IsWindows> 
+    <IsMacOS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' ">true</IsMacOS> 
+    <IsLinux Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' ">true</IsLinux> 
+  </PropertyGroup>
+  
+  <Target Name="CopyAVBlocksCore_Linux" AfterTargets="AfterBuild" Condition=" '$(IsLinux)' == 'true' ">
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/libAVBlocks64.so" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+  </Target>
+
+  <Target Name="CopyAVBlocksCore_macOS" AfterTargets="AfterBuild" Condition=" '$(IsMacOS)' == 'true' ">
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/libAVBlocks.dylib" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+  </Target>
+
+  <Target Name="CopyAVBlocksCore_Windows_net60" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net60' ">
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+  </Target>
+
+  <Target Name="CopyAVBlocksCore_Windows_net48" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net48' ">
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clr4.x64.dll" DestinationFolder="$(OutputPath)" />
+  </Target>
+
+</Project>
