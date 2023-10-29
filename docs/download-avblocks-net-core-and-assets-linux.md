@@ -1,4 +1,4 @@
-# Download AVBlocks Core and Assets on Linux
+# Download AVBlocks .NET Core and Assets on Linux
 
 Change to the directory where you cloned this repository:
 
@@ -8,7 +8,7 @@ cd avblocks-cpp
 
 ## AVBlocks Core
 
-In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks Core](https://github.com/avblocks/avblocks-core/releases) releases.   
+In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks .NET Core](https://github.com/avblocks/avblocks-net-core/releases) releases.   
 
 ```bash
 # select version and platform
