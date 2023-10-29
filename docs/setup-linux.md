@@ -1,8 +1,8 @@
-# Setup for macOS
+# Setup for Linux
 
 Download the `dotnet-install.sh` script
 
-```bash
+```sh
 cd
 curl -sSL https://dot.net/v1/dotnet-install.sh > dotnet-install.sh
 chmod +x dotnet-install.sh
@@ -14,7 +14,7 @@ chmod +x dotnet-install.sh
 
 This is needed by Visual Stuio Code C# extension. Install with `dotnet-install.sh` script:
 
-```bash
+```sh
 ./dotnet-install.sh --channel 7.0
 ```
 
@@ -22,7 +22,7 @@ This is needed by Visual Stuio Code C# extension. Install with `dotnet-install.s
 
 ### .NET Runtime 7.0.x
 
-```
+```sh
 ./dotnet-install.sh --runtime dotnet --version 7.0.11
 ```
 
@@ -30,7 +30,7 @@ or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/down
 
 ### .NET Runtime 6.0.x
 
-```
+```sh
 ./dotnet-install.sh --runtime dotnet --version 6.0.22
 ```
 
