@@ -3,38 +3,68 @@
 Download the `dotnet-install.sh` script
 
 ```bash
-cd
 curl -sSL https://dot.net/v1/dotnet-install.sh > dotnet-install.sh
 chmod +x dotnet-install.sh
 ```
 
 
+## .NET Runtime
 
-## .net SDK
+### .NET Runtime 6.0 (LTS)
 
-### .net 7.0
+```
+./dotnet-install.sh --runtime dotnet --channel 6.0 --version latest
+```
 
-This is needed by Visual Stuio Code C# extension. Install with `dotnet-install.sh` script:
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+### .NET Runtime 7.0
+
+```
+./dotnet-install.sh --runtime dotnet --channel 7.0 --version latest
+```
+
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+
+### .NET Runtime 8.0 (LTS)
+
+```
+./dotnet-install.sh --runtime dotnet --channel 8.0 --version latest
+```
+
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+
+## .NET SDK
+
+### .NET SDK 6.0
+
+This is needed by the Visual Studio Code C# extension. Install with `dotnet-install.sh` script:
+
+```bash
+./dotnet-install.sh --channel 6.0
+```
+
+### .NET SDK 7.0
+
+This is needed by the Visual Studio Code C# extension. Install with `dotnet-install.sh` script:
 
 ```bash
 ./dotnet-install.sh --channel 7.0
 ```
 
-## .net Runtime
+### .NET SDK 8.0
 
-### .NET Runtime 7.0.x
+Install with `dotnet-install.sh` script:
 
-```
-./dotnet-install.sh --runtime dotnet --version 7.0.11
-```
-
-or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-
-### .NET Runtime 6.0.x
-
-```
-./dotnet-install.sh --runtime dotnet --version 6.0.22
+```bash
+./dotnet-install.sh --channel 8.0
 ```
 
-or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+## Test
 
+Test that you can run the `dotnet` CLI (command line interface)
+
+```bash
+~/.dotnet/dotnet --version
+~/.dotnet/dotnet new console --help
+```
