@@ -1,26 +1,46 @@
 # Setup for Windows
 
-## .net SDK
+> All scripts are PowerShell
 
-### .net 7.0
-
-Install with Windows Package Manager (winget):
+Download the `dotnet-install.ps1` script
 
 ```powershell
-winget install Microsoft.DotNet.SDK.7
+Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile 'dotnet-install.ps1';
 ```
 
-### .net 6.0
 
-Install with Windows Package Manager (winget):
+## .NET Runtime
+
+### .NET Runtime 6.0 (LTS)
 
 ```powershell
-winget install Microsoft.DotNet.SDK.6
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 6.0 -Runtime dotnet -Version latest
 ```
 
-### .net 4.8 
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+### .NET Runtime 7.0
 
 ```powershell
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 7.0 -Runtime dotnet -Version latest
+```
+
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+
+### .NET Runtime 8.0 (LTS)
+
+```powershell
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 8.0 -Runtime dotnet -Version latest
+```
+
+or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+
+## .NET SDK
+
+### .NET 4.8 
+
+```powershell
+mkdir ~/Downloads
 cd ~/Downloads
 
 Start-BitsTransfer `
@@ -31,11 +51,30 @@ Start-BitsTransfer `
 # For non-silent install
 # & ./ndp48-devpack-enu.exe 
 ```
-## .net Runtime 
 
-### .net 6.0 runtime
+### .NET 6.0
 
 ```powershell
-Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile 'dotnet-install.ps1';
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Version '6.0.8' -Runtime 'dotnet'
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 6.0
+```
+
+### .NET 7.0
+
+```powershell
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 7.0
+```
+
+### .NET 8.0
+
+```powershell
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 8.0
+```
+
+ ## Test
+
+Test that you can run the `dotnet` CLI (command line interface)
+
+```powershell
+dotnet --version
+dotnet new console --help
 ```
