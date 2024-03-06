@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_aac_adts_file", "dec_aac_adts_file.csproj", "{71753CC4-2397-43EE-B2ED-41882BE88130}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71753CC4-2397-43EE-B2ED-41882BE88130}.Debug|x64.ActiveCfg = Debug|x64
+		{71753CC4-2397-43EE-B2ED-41882BE88130}.Debug|x64.Build.0 = Debug|x64
+		{71753CC4-2397-43EE-B2ED-41882BE88130}.Release|x64.ActiveCfg = Release|x64
+		{71753CC4-2397-43EE-B2ED-41882BE88130}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51E313F9-8CB9-4E6F-A0AE-3D4D2C4DCCE2}
+	EndGlobalSection
+EndGlobal
