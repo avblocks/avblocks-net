@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export DOTNET_ROOT=$HOME/.dotnet
 export PATH="$HOME/.dotnet:$PATH"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

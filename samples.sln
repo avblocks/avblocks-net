@@ -62,6 +62,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_preset_file", "samples\
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_mp3_file", "samples\enc_mp3_file\enc_mp3_file.csproj", "{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +96,8 @@ Global
 		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9}.Debug|x64.Build.0 = Debug|x64
 		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}.Debug|x64.ActiveCfg = Debug|x64
 		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}.Debug|x64.Build.0 = Debug|x64
+		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059}.Debug|x64.ActiveCfg = Debug|x64
+		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +115,7 @@ Global
 		{BA8FDEDC-4237-4B11-84C8-F504A887D5FE} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE08AFDF-7EA5-4A0F-AD4E-C9307EF8EDE0}

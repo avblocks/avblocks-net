@@ -96,6 +96,12 @@ Convert a raw YUV video file to a compressed AVC / H.264 video file.
 
 See [enc_avc_file](./enc_avc_file) for details.
 
+#### enc_mp3_file
+
+Encode WAV file to MP3 file.
+
+See [enc_mp3_file](./enc_mp3_file) for details.
+
 ### Other 
 
 #### enc_preset_file

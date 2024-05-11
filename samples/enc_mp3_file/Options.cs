@@ -7,11 +7,11 @@ namespace CliSample
 {
     class Options
     {
-        // dec_avc_file command line options
-        [Option('i', "input", HelpText = "input AVC / H.264 file")]
+        // enc_mp3_file command line options
+        [Option('i', "input", HelpText = "input WAV file")]
         public string InputFile { get; set; }
 
-        [Option('o', "output", HelpText = "output YUV file")]
+        [Option('o', "output", HelpText = "output MP3 file")]
         public string OutputFile { get; set; }
 
         public bool Error { get; private set; }
@@ -33,8 +33,8 @@ namespace CliSample
         void SetDefaultOptions()
         {
             string exeDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-            InputFile = Path.Combine(exeDir, "../../assets/vid/foreman_qcif.h264");
-            OutputFile = Path.Combine(exeDir, "../../output/dec_avc_file/foreman_qcif.yuv");
+            InputFile = Path.Combine(exeDir, "../../assets/aud/equinox-48Khz.wav");
+            OutputFile = Path.Combine(exeDir, "../../output/enc_mp3_file/equinox-48KHz.mp3");
 
             Console.WriteLine("Using default options: ");
             Console.WriteLine(" --input " + InputFile);
@@ -105,4 +105,3 @@ namespace CliSample
         }
     }
 }
-
