@@ -1,2 +1,2 @@
-*.sh linguist-detectable=false
-*.ps1 linguist-detectable=false
+*.* linguist-detectable=false
+*.cs linguist-detectable=true
