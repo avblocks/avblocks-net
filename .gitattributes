@@ -1,2 +1,2 @@
 *.* linguist-detectable=false
-*.cs linguist-detectable=true
+samples/**/*.cs linguist-detectable=true
