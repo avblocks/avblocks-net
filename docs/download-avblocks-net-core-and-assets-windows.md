@@ -12,32 +12,45 @@ cd avblocks-net
 
 In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks Core](https://github.com/avblocks/avblocks-core/releases) releases.   
 
+### .NET Core 6.0
+
 ```powershell
 # select version and platform
-$tag='v3.0.0-demo.1'
+$tag='v3.1.0-demo.1'
 $platform='windows'
 
 # download
 new-item -Force -ItemType Directory ./sdk/net60
+cd ./sdk/net60
+
+# sdk
 curl.exe `
   --location `
-  --output ./sdk/net60/avblocks-net60-$tag-$platform.zip `
+  --output ./avblocks-net60-$tag-$platform.zip `
   https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.zip
 
+# unzip
+expand-archive -Force -Path avblocks-net60-$tag-$platform.zip -DestinationPath .
+
+cd ../..
+```
+
+### .NET Framework 4.8 
+
+```powershell
 new-item -Force -ItemType Directory ./sdk/net48
+cd ./sdk/net48
+
+# sdk
 curl.exe `
   --location `
-  --output ./sdk/net48/avblocks-net48-$tag-$platform.zip `
+  --output ./avblocks-net48-$tag-$platform.zip `
   https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net48-$tag-$platform.zip
 
 # unzip
-pushd sdk/net60
-expand-archive -Force -Path avblocks-net60-$tag-$platform.zip -DestinationPath .
-popd
-
-pushd sdk/net48
 expand-archive -Force -Path avblocks-net48-$tag-$platform.zip -DestinationPath .
-popd
+
+cd ../..
 ```
 
 ## Assets
@@ -46,14 +59,15 @@ These demo audio and video assets are used as input for the AVBlocks samples.
 
 ```powershell
 new-item -Force -ItemType Directory ./assets
+cd ./assets
+
 curl.exe `
   --location `
-  --output ./assets/avblocks_assets_v1.zip `
+  --output ./avblocks_assets_v1.zip `
   https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v1.zip
   
 # unzip
-pushd assets
 expand-archive -Force -Path avblocks_assets_v1.zip -DestinationPath .
-popd
-```
 
+cd ..
+```
