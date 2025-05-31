@@ -29,6 +29,17 @@ curl.exe `
   --output ./avblocks-net60-$tag-$platform.zip `
   https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.zip
 
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-net60-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net60-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-net60-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { { Write-Host "Checksum failed!"; } }
+
 # unzip
 expand-archive -Force -Path avblocks-net60-$tag-$platform.zip -DestinationPath .
 
@@ -46,6 +57,17 @@ curl.exe `
   --location `
   --output ./avblocks-net48-$tag-$platform.zip `
   https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net48-$tag-$platform.zip
+
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-net48-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net48-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net48-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-net48-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { { Write-Host "Checksum failed!"; } }
 
 # unzip
 expand-archive -Force -Path avblocks-net48-$tag-$platform.zip -DestinationPath .
