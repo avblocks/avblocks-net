@@ -12,7 +12,7 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```bash
 # select version and platform
-tag="v3.1.0-demo.1"
+tag="v3.2.0-demo.1"
 platform="linux"
 
 # download
@@ -50,11 +50,11 @@ cd ./assets
 
 curl \
   --location \
-  --output ./avblocks_assets_v1.zip \
-  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v1.zip
+  --output ./avblocks_assets_v3.zip \
+  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v3.zip
   
 # unzip
-unzip avblocks_assets_v1.zip
+unzip avblocks_assets_v3.zip
 
 cd ..
 ```
