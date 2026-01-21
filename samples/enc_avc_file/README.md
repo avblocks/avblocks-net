@@ -13,7 +13,7 @@ enc_avc_file --frame <width>x<height> --rate <fps> --color <color> --input <file
 List options:
 
 ```sh
-./bin/net60/enc_avc_file --help
+./bin/net10.0/enc_avc_file --help
 enc_avc_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -37,7 +37,7 @@ Copyright (C) 2023 Primo Software
 List supported color spaces for input:
 
 ```sh
-./bin/net60/enc_avc_file --colors
+./bin/net10.0/enc_avc_file --colors
 
 COLORS
 ---------
@@ -70,7 +70,7 @@ Encode the input file `./assets/vid/foreman_qcif.yuv` into output file `./output
 # Linux and macOS 
 mkdir -p ./output/enc_avc_file
 
-./bin/net60/enc_avc_file \
+./bin/net10.0/enc_avc_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --output ./output/enc_avc_file/foreman_qcif.h264 \
     --frame 176x144 --rate 30 --color yuv420
@@ -80,7 +80,7 @@ mkdir -p ./output/enc_avc_file
 # Windows
 mkdir -Force -Path ./output/enc_avc_file
 
-./bin/net60/enc_avc_file `
+./bin/net10.0/enc_avc_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --output ./output/enc_avc_file/foreman_qcif.h264 `
     --frame 176x144 --rate 30 --color yuv420 

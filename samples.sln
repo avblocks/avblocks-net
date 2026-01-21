@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -67,6 +66,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_mp3_file", "samples\enc
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_avc_au", "samples\dec_avc_au\dec_avc_au.csproj", "{A1B2C3D4-E5F6-4789-ABCD-EF0123456789}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_avc_pull", "samples\dec_avc_pull\dec_avc_pull.csproj", "{B2C3D4E5-F6A7-4890-BCDE-F01234567890}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -98,6 +107,10 @@ Global
 		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6}.Debug|x64.Build.0 = Debug|x64
 		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059}.Debug|x64.ActiveCfg = Debug|x64
 		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059}.Debug|x64.Build.0 = Debug|x64
+		{A1B2C3D4-E5F6-4789-ABCD-EF0123456789}.Debug|x64.ActiveCfg = Debug|x64
+		{A1B2C3D4-E5F6-4789-ABCD-EF0123456789}.Debug|x64.Build.0 = Debug|x64
+		{B2C3D4E5-F6A7-4890-BCDE-F01234567890}.Debug|x64.ActiveCfg = Debug|x64
+		{B2C3D4E5-F6A7-4890-BCDE-F01234567890}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +129,8 @@ Global
 		{2BA6DBF3-5772-4BA6-9027-8A5FB06118D9} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{F0F2E1BF-F919-4748-BCC3-F5AAAA0471E6} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{19FA1B23-ACD3-45C2-B1B8-E5F82C7DA059} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{A1B2C3D4-E5F6-4789-ABCD-EF0123456789} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{B2C3D4E5-F6A7-4890-BCDE-F01234567890} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE08AFDF-7EA5-4A0F-AD4E-C9307EF8EDE0}

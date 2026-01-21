@@ -72,6 +72,12 @@ Decode a compressed AVC / H.264 file to raw uncompressed YUV video file.
 
 See [dec_avc_file](./dec_avc_file) for details.
 
+#### dec_avc_pull
+
+Decode AVC / H.264 file to YUV file using `Transcoder.Pull`.
+
+See [dec_avc_pull](./dec_avc_pull) for details.
+
 ---
 
 ## Encoding

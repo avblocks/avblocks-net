@@ -14,15 +14,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsLinux)' == 'true' ">
-    <TargetFrameworks>net60</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsMacOS)' == 'true' ">
-    <TargetFrameworks>net60</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsWindows)' == 'true' ">
-    <TargetFrameworks>net60;net48</TargetFrameworks>
+    <TargetFrameworks>net10.0;net48</TargetFrameworks>
   </PropertyGroup>  
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">

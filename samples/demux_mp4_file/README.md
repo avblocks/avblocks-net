@@ -13,7 +13,7 @@ demux_mp4_file --input <input_mp4_file> --output <output_mp4_filename_without_ex
 List options:
 
 ```sh
-./bin/net60/demux_mp4_file --help
+./bin/net10.0/demux_mp4_file --help
 demux_mp4_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -34,7 +34,7 @@ Extract the audio and video streams from `./assets/mov/big_buck_bunny_trailer.mp
 # Linux and macOS 
 mkdir -p ./output/demux_mp4_file
 
-./bin/net60/demux_mp4_file \
+./bin/net10.0/demux_mp4_file \
     --input ./assets/mov/big_buck_bunny_trailer.mp4 \
     --output ./output/demux_mp4_file/big_buck_bunny_trailer
 ```
@@ -43,7 +43,7 @@ mkdir -p ./output/demux_mp4_file
 # Windows
 mkdir -Force -Path ./output/demux_mp4_file
 
-./bin/net60/demux_mp4_file `
+./bin/net10.0/demux_mp4_file `
     --input ./assets/mov/big_buck_bunny_trailer.mp4 `
     --output ./output/demux_mp4_file/big_buck_bunny_trailer
 ```

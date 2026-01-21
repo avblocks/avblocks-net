@@ -13,7 +13,7 @@ slideshow --input <directory> --output <filename_without_extension> --preset <pr
 List options:
 
 ```sh
-./bin/net60/slideshow --help
+./bin/net10.0/slideshow --help
 slideshow 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -34,7 +34,7 @@ Create an MP4 / H.264 clip from a sequence of images in the `./assets/img` folde
 # Linux and macOS 
 mkdir -p ./output/slideshow
 
-./bin/net60/slideshow \
+./bin/net10.0/slideshow \
     --input ./assets/img \
     --output ./output/slideshow/cube \
     --preset mp4.h264.aac
@@ -44,7 +44,7 @@ mkdir -p ./output/slideshow
 # Windows
 mkdir -Force -Path ./output/slideshow
 
-./bin/net60/slideshow `
+./bin/net10.0/slideshow `
     --input ./assets/img `
     --output ./output/slideshow/cube `
     --preset mp4.h264.aac
@@ -53,7 +53,7 @@ mkdir -Force -Path ./output/slideshow
 List supported presets for input:
 
 ```sh
-./bin/net60/slideshow --presets
+./bin/net10.0/slideshow --presets
 
 PRESETS
 -----------

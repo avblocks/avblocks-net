@@ -13,7 +13,7 @@ re-encode [--audio] [--video] --input <mp4_file.mp4> --output <mp4_file.mp4>
 List options:
 
 ```sh
-./bin/net60/re-encode --help
+./bin/net10.0/re-encode --help
 re-encode 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -36,7 +36,7 @@ Re-encode the `./assets/mov/big_buck_bunny_trailer.mp4` file. Only the video str
 # Linux and macOS 
 mkdir -p ./output/re-encode
 
-./bin/net60/re-encode \
+./bin/net10.0/re-encode \
     --video \
     --input ./assets/mov/big_buck_bunny_trailer.mp4 \
     --output ./output/re-encode/big_buck_bunny_trailer.mp4
@@ -46,7 +46,7 @@ mkdir -p ./output/re-encode
 # Windows
 mkdir -Force -Path ./output/re-encode
 
-./bin/net60/re-encode `
+./bin/net10.0/re-encode `
     --video `
     --input ./assets/mov/big_buck_bunny_trailer.mp4 `
     --output ./output/re-encode/big_buck_bunny_trailer.mp4

@@ -14,7 +14,7 @@ dec_avc_file --input <file.h264> --output <file.yuv>
 List options:
 
 ```sh
-./bin/net60/dec_avc_file --help
+./bin/net10.0/dec_avc_file --help
 dec_avc_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -31,7 +31,7 @@ Decode the input file `./assets/vid/foreman_qcif.h264` into output file `./outpu
 # Linux and macOS 
 mkdir -p ./output/dec_avc_file
 
-./bin/net60/dec_avc_file \
+./bin/net10.0/dec_avc_file \
     --input ./assets/vid/foreman_qcif.h264 \
     --output ./output/dec_avc_file/foreman_qcif.yuv
 ```
@@ -40,7 +40,7 @@ mkdir -p ./output/dec_avc_file
 # Windows
 mkdir -Force -Path ./output/dec_avc_file
 
-./bin/net60/dec_avc_file `
+./bin/net10.0/dec_avc_file `
     --input ./assets/vid/foreman_qcif.h264 `
     --output ./output/dec_avc_file/foreman_qcif.yuv `
     --frame 176x144 --rate 30 --color yuv420 

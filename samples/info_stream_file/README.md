@@ -13,7 +13,7 @@ info_stream_file --input <any_media_file>
 List options:
 
 ```sh
-./bin/net60/info_stream_file --help
+./bin/net10.0/info_stream_file --help
 info_stream_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -28,12 +28,12 @@ List the audio and video streams of the `./assets/mov/big_buck_bunny_trailer.mp4
 
 ```sh
 # Linux and macOS 
-./bin/net60/info_stream_file \
+./bin/net10.0/info_stream_file \
     --input ./assets/mov/big_buck_bunny_trailer.mp4
 ```
 
 ```powershell
 # Windows
-./bin/net60/info_stream_file `
+./bin/net10.0/info_stream_file `
     --input ./assets/mov/big_buck_bunny_trailer.mp4
 ```

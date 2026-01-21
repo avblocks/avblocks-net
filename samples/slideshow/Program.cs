@@ -1,8 +1,8 @@
 using System.Runtime.InteropServices;
 /*
- *  Copyright (c) 2013 Primo Software. All Rights Reserved.
+ *  Copyright (c) 2011-2026 Primo Software. All Rights Reserved.
  *
- *  Use of this source code is governed by a BSD-style license
+ *  Use of this source code is governed by a MIT license
  *  that can be found in the LICENSE file in the root of the source
  *  tree.  
 */
