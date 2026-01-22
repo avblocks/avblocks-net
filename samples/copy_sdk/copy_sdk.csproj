@@ -11,15 +11,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsLinux)' == 'true' ">
-    <TargetFrameworks>net60</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsMacOS)' == 'true' ">
-    <TargetFrameworks>net60</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsWindows)' == 'true' ">
-    <TargetFrameworks>net60;net48</TargetFrameworks>
+    <TargetFrameworks>net10.0;net48</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -38,7 +38,7 @@
     <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
   </Target>
 
-  <Target Name="CopyAVBlocksCore_Windows_net60" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net60' ">
+  <Target Name="CopyAVBlocksCore_Windows_net100" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net10.0' ">
     <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
     <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
   </Target>

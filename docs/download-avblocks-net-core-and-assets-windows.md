@@ -16,32 +16,32 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```powershell
 # select version and platform
-$tag='v3.2.0-demo.1'
+$tag='v3.3.0-demo.1'
 $platform='windows'
 
 # download
-new-item -Force -ItemType Directory ./sdk/net60
-cd ./sdk/net60
+new-item -Force -ItemType Directory ./sdk/net10.0
+cd ./sdk/net10.0
 
 # sdk
 curl.exe `
   --location `
-  --output ./avblocks-net60-$tag-$platform.zip `
-  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.zip
+  --output ./avblocks-net10.0-$tag-$platform.zip `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
 
 # sha256 checksum
 curl.exe `
   --location `
-  --output ./avblocks-net60-$tag-$platform.zip.sha256 `
-  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.zip.sha256
+  --output ./avblocks-net10.0-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip.sha256
 
 # verify checksum
-$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net60-$tag-$platform.zip).Hash.ToLower()
-$expectedHash = (Get-Content ./avblocks-net60-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net10.0-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-net10.0-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
 if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { { Write-Host "Checksum failed!"; } }
 
 # unzip
-expand-archive -Force -Path avblocks-net60-$tag-$platform.zip -DestinationPath .
+expand-archive -Force -Path avblocks-net10.0-$tag-$platform.zip -DestinationPath .
 
 cd ../..
 ```
@@ -86,7 +86,7 @@ cd ./assets
 curl.exe `
   --location `
   --output ./avblocks_assets_v3.zip `
-  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v3.zip
+  https://github.com/avblocks/avblocks-assets/releases/download/v3/avblocks_assets_v3.zip
   
 # unzip
 expand-archive -Force -Path avblocks_assets_v3.zip -DestinationPath .

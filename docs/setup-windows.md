@@ -8,33 +8,6 @@ Download the `dotnet-install.ps1` script
 Invoke-WebRequest 'https://dot.net/v1/dotnet-install.ps1' -OutFile 'dotnet-install.ps1';
 ```
 
-
-## .NET Runtime
-
-### .NET Runtime 6.0 (LTS)
-
-```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 6.0 -Runtime dotnet -Version latest
-```
-
-or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
-
-### .NET Runtime 7.0
-
-```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 7.0 -Runtime dotnet -Version latest
-```
-
-or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
-
-### .NET Runtime 8.0 (LTS)
-
-```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 8.0 -Runtime dotnet -Version latest
-```
-
-or download and install from [Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-
 ## .NET SDK
 
 ### .NET 4.8 
@@ -52,22 +25,10 @@ Start-BitsTransfer `
 # & ./ndp48-devpack-enu.exe 
 ```
 
-### .NET 6.0
+### .NET 10.0
 
 ```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 6.0
-```
-
-### .NET 7.0
-
-```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 7.0
-```
-
-### .NET 8.0
-
-```powershell
-./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 8.0
+./dotnet-install.ps1 -InstallDir '~/.dotnet' -Channel 10.0
 ```
 
  ## Test

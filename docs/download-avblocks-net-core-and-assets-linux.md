@@ -12,30 +12,30 @@ In the script below, change the tag to the release that you need. For the availa
 
 ```bash
 # select version and platform
-tag="v3.2.0-demo.1"
+tag="v3.3.0-demo.1"
 platform="linux"
 
 # download
-mkdir -p ./sdk/net60
-cd ./sdk/net60
+mkdir -p ./sdk/net10.0
+cd ./sdk/net10.0
 
 # sdk
 curl \
   --location \
-  --output ./avblocks-net60-$tag-$platform.tar.gz \
-  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.tar.gz
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz
 
 # sha256 checksum
 curl \
   --location \
-  --output ./avblocks-net60-$tag-$platform.tar.gz.sha256 \
-  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net60-$tag-$platform.tar.gz.sha256
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz.sha256 \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz.sha256
 
 # verify sha256 checksum
-shasum --check ./avblocks-net60-$tag-$platform.tar.gz.sha256
+shasum --check ./avblocks-net10.0-$tag-$platform.tar.gz.sha256
   
 # unzip
-tar -xvf avblocks-net60-$tag-$platform.tar.gz
+tar -xvf avblocks-net10.0-$tag-$platform.tar.gz
 
 cd ../..
 ```
@@ -51,7 +51,7 @@ cd ./assets
 curl \
   --location \
   --output ./avblocks_assets_v3.zip \
-  https://github.com/avblocks/avblocks-assets/releases/download/v1/avblocks_assets_v3.zip
+  https://github.com/avblocks/avblocks-assets/releases/download/v3/avblocks_assets_v3.zip
   
 # unzip
 unzip avblocks_assets_v3.zip
