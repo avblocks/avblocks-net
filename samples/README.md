@@ -28,6 +28,16 @@ Extract the first audio and video elementary stream from an MP4 container and sa
 
 See [demux_mp4_file](./demux_mp4_file) for details.
 
+### WebM
+
+> WebM Container Format
+
+#### demux_webm_file
+
+Extract the audio and video elementary streams from a WebM container and save each stream into a separate file.
+
+See [demux_webm_file](./demux_webm_file) for details.
+
 ---
 
 ## Muxing
@@ -40,7 +50,17 @@ See [demux_mp4_file](./demux_mp4_file) for details.
 
 Multiplex two single-stream MP4 files containing AAC (audio) and H.264 (video) streams into an MP4 (container) file.
 
-See [mux_mp4_file](./demux_mp4_file) for details.
+See [mux_mp4_file](./mux_mp4_file) for details.
+
+### WebM
+
+> WebM Container Format
+
+#### mux_webm_file
+
+Multiplex Vorbis/OGG (audio) and VP8/IVF (video) files into a WebM (container) file.
+
+See [mux_webm_file](./mux_webm_file) for details.
 
 ---
 
@@ -88,6 +108,26 @@ Decode an MP3 file to a WAV file.
 
 See [dec_mp3_file](./dec_mp3_file) for details.
 
+### Opus
+
+> Opus Interactive Audio Codec
+
+#### dec_opus_file
+
+Decode an Opus/OGG file to a WAV file.
+
+See [dec_opus_file](./dec_opus_file) for details.
+
+### Vorbis
+
+> Ogg Vorbis Audio Codec
+
+#### dec_vorbis_file
+
+Decode a Vorbis/OGG file to a WAV file.
+
+See [dec_vorbis_file](./dec_vorbis_file) for details.
+
 ### AVC / H.264 
 
 > Advanced Video Coding
@@ -109,6 +149,26 @@ See [dec_avc_file](./dec_avc_file) for details.
 Decode AVC / H.264 file to YUV file using `Transcoder.Pull`.
 
 See [dec_avc_pull](./dec_avc_pull) for details.
+
+### VP8
+
+> VP8 Video Codec
+
+#### dec_vp8_file
+
+Decode a VP8/IVF file to a raw YUV video file.
+
+See [dec_vp8_file](./dec_vp8_file) for details.
+
+### VP9
+
+> VP9 Video Codec
+
+#### dec_vp9_file
+
+Decode a VP9/IVF file to a raw YUV video file.
+
+See [dec_vp9_file](./dec_vp9_file) for details.
 
 ---
 
@@ -189,6 +249,46 @@ See [enc_mp3_pull](./enc_mp3_pull) for details.
 Encode WAV file to MP3 file using `Transcoder.Push`.
 
 See [enc_mp3_push](./enc_mp3_push) for details.
+
+### Opus
+
+> Opus Interactive Audio Codec
+
+#### enc_opus_file
+
+Encode a WAV file to an Opus/OGG file.
+
+See [enc_opus_file](./enc_opus_file) for details.
+
+### Vorbis
+
+> Ogg Vorbis Audio Codec
+
+#### enc_vorbis_file
+
+Encode a WAV file to a Vorbis/OGG file.
+
+See [enc_vorbis_file](./enc_vorbis_file) for details.
+
+### VP8
+
+> VP8 Video Codec
+
+#### enc_vp8_file
+
+Convert a raw YUV video file to a compressed VP8/IVF video file.
+
+See [enc_vp8_file](./enc_vp8_file) for details.
+
+### VP9
+
+> VP9 Video Codec
+
+#### enc_vp9_file
+
+Convert a raw YUV video file to a compressed VP9/IVF video file.
+
+See [enc_vp9_file](./enc_vp9_file) for details.
 
 ### Other 
 
