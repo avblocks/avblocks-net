@@ -414,11 +414,12 @@ static void PrintError(string action, ErrorInfo error)
 
 See [samples/README.md](./samples/README.md) for a complete list of working examples including:
 
-- **Media Info**: Extract stream information and metadata
-- **Encoding**: AAC, MP3, H.264/AVC, with presets
-- **Decoding**: H.264 to YUV
-- **Container Operations**: Demux/Mux MP4 files
-- **Misc**: Re-encoding, slideshow generation
+- **Media Info**: Extract stream information (`info_stream_file`) and metadata (`info_metadata_file`)
+- **Demuxing**: MP4 (`demux_mp4_file`), WebM (`demux_webm_file`), AVC/H.264 Access Units (`dump_avc_au`), HEVC/H.265 Access Units (`dump_hevc_au`)
+- **Muxing**: MP4 (`mux_mp4_file`), WebM (`mux_webm_file`)
+- **Decoding**: AAC/ADTS (`dec_aac_adts_file`, `dec_aac_adts_pull`), G.711 A-law/μ-law (`dec_g711_alaw_file`, `dec_g711_ulaw_file`), MP3 (`dec_mp3_file`), Opus (`dec_opus_file`), Vorbis (`dec_vorbis_file`), AVC/H.264 (`dec_avc_au`, `dec_avc_file`, `dec_avc_pull`), HEVC/H.265 (`dec_hevc_au`, `dec_hevc_file`), VP8 (`dec_vp8_file`), VP9 (`dec_vp9_file`)
+- **Encoding**: AAC/ADTS (`enc_aac_adts_file`, `enc_aac_adts_pull`, `enc_aac_adts_push`), G.711 A-law/μ-law (`enc_g711_alaw_file`, `enc_g711_ulaw_file`), AVC/H.264 (`enc_avc_file`, `enc_avc_pull`), HEVC/H.265 (`enc_hevc_file`, `enc_hevc_pull`), MP3 (`enc_mp3_file`, `enc_mp3_pull`, `enc_mp3_push`), Opus (`enc_opus_file`), Vorbis (`enc_vorbis_file`), VP8 (`enc_vp8_file`), VP9 (`enc_vp9_file`), with presets (`enc_preset_file`)
+- **Misc**: Re-encoding (`re-encode`), slideshow generation (`slideshow`)
 
 # Development
 
