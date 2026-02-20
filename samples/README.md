@@ -38,6 +38,26 @@ Extract the audio and video elementary streams from a WebM container and save ea
 
 See [demux_webm_file](./demux_webm_file) for details.
 
+### AVC / H.264
+
+> Advanced Video Coding
+
+#### dump_avc_au
+
+Split an H.264/AVC elementary stream into Access Units and dump each Access Unit to a separate file, while also parsing and printing the NAL units within each Access Unit.
+
+See [dump_avc_au](./dump_avc_au) for details.
+
+### HEVC / H.265
+
+> High Efficiency Video Coding
+
+#### dump_hevc_au
+
+Split an H.265/HEVC elementary stream into Access Units and dump each Access Unit to a separate file, while also parsing and printing the NAL units within each Access Unit.
+
+See [dump_hevc_au](./dump_hevc_au) for details.
+
 ---
 
 ## Muxing
@@ -150,6 +170,22 @@ Decode AVC / H.264 file to YUV file using `Transcoder.Pull`.
 
 See [dec_avc_pull](./dec_avc_pull) for details.
 
+### HEVC / H.265 
+
+> High Efficiency Video Coding
+
+#### dec_hevc_au
+
+Decode HEVC / H.265 stream. The sample uses sequence of files to simulate a stream of H.265 Access Units (AUs) and a Transcoder object to decode the AUs to raw YUV video frames.    
+
+See [dec_hevc_au](./dec_hevc_au) for details.
+
+#### dec_hevc_file
+
+Decode a compressed HEVC / H.265 file to raw uncompressed YUV video file.       
+
+See [dec_hevc_file](./dec_hevc_file) for details.
+
 ### VP8
 
 > VP8 Video Codec
@@ -227,6 +263,22 @@ See [enc_avc_file](./enc_avc_file) for details.
 Encode a raw YUV video file to a compressed AVC / H.264 video file using `Transcoder.Pull`.  
 
 See [enc_avc_pull](./enc_avc_pull) for details.
+
+### HEVC / H.265 
+
+> High Efficiency Video Coding
+
+#### enc_hevc_file
+
+Convert a raw YUV video file to a compressed HEVC / H.265 video file.  
+
+See [enc_hevc_file](./enc_hevc_file) for details.
+
+#### enc_hevc_pull
+
+Encode a raw YUV video file to a compressed HEVC / H.265 video file using `Transcoder.Pull`.  
+
+See [enc_hevc_pull](./enc_hevc_pull) for details.
 
 ### MP3
 
