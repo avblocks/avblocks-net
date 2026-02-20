@@ -12,7 +12,7 @@ cd avblocks-net
 
 In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks Core](https://github.com/avblocks/avblocks-core/releases) releases.   
 
-### .NET Core 6.0
+### .NET Core 10.0
 
 ```powershell
 # select version and platform
@@ -85,11 +85,11 @@ cd ./assets
 
 curl.exe `
   --location `
-  --output ./avblocks_assets_v4.zip `
-  https://github.com/avblocks/avblocks-assets/releases/download/v4/avblocks_assets_v4.zip
+  --output ./avblocks_assets_v5.zip `
+  https://github.com/avblocks/avblocks-assets/releases/download/v5/avblocks_assets_v5.zip
   
 # unzip
-expand-archive -Force -Path avblocks_assets_v4.zip -DestinationPath .
+expand-archive -Force -Path avblocks_assets_v5.zip -DestinationPath .
 
 cd ..
 ```
