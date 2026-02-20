@@ -414,12 +414,46 @@ static void PrintError(string action, ErrorInfo error)
 
 See [samples/README.md](./samples/README.md) for a complete list of working examples including:
 
-- **Media Info**: Extract stream information (`info_stream_file`) and metadata (`info_metadata_file`)
-- **Demuxing**: MP4 (`demux_mp4_file`), WebM (`demux_webm_file`), AVC/H.264 Access Units (`dump_avc_au`), HEVC/H.265 Access Units (`dump_hevc_au`)
-- **Muxing**: MP4 (`mux_mp4_file`), WebM (`mux_webm_file`)
-- **Decoding**: AAC/ADTS (`dec_aac_adts_file`, `dec_aac_adts_pull`), G.711 A-law/μ-law (`dec_g711_alaw_file`, `dec_g711_ulaw_file`), MP3 (`dec_mp3_file`), Opus (`dec_opus_file`), Vorbis (`dec_vorbis_file`), AVC/H.264 (`dec_avc_au`, `dec_avc_file`, `dec_avc_pull`), HEVC/H.265 (`dec_hevc_au`, `dec_hevc_file`), VP8 (`dec_vp8_file`), VP9 (`dec_vp9_file`)
-- **Encoding**: AAC/ADTS (`enc_aac_adts_file`, `enc_aac_adts_pull`, `enc_aac_adts_push`), G.711 A-law/μ-law (`enc_g711_alaw_file`, `enc_g711_ulaw_file`), AVC/H.264 (`enc_avc_file`, `enc_avc_pull`), HEVC/H.265 (`enc_hevc_file`, `enc_hevc_pull`), MP3 (`enc_mp3_file`, `enc_mp3_pull`, `enc_mp3_push`), Opus (`enc_opus_file`), Vorbis (`enc_vorbis_file`), VP8 (`enc_vp8_file`), VP9 (`enc_vp9_file`), with presets (`enc_preset_file`)
-- **Misc**: Re-encoding (`re-encode`), slideshow generation (`slideshow`)
+- **Media Info**
+  - [info_stream_file](./samples/info_stream_file) - Extract audio/video stream information
+  - [info_metadata_file](./samples/info_metadata_file) - Extract metadata
+
+- **Demuxing**
+  - [demux_mp4_file](./samples/demux_mp4_file) - Extract streams from MP4
+  - [demux_webm_file](./samples/demux_webm_file) - Extract streams from WebM
+  - [dump_avc_au](./samples/dump_avc_au) - Split H.264/AVC into Access Units
+  - [dump_hevc_au](./samples/dump_hevc_au) - Split H.265/HEVC into Access Units
+
+- **Muxing**
+  - [mux_mp4_file](./samples/mux_mp4_file) - Combine streams into MP4
+  - [mux_webm_file](./samples/mux_webm_file) - Combine streams into WebM
+
+- **Decoding**
+  - [dec_aac_adts_file](./samples/dec_aac_adts_file), [dec_aac_adts_pull](./samples/dec_aac_adts_pull) - AAC/ADTS to WAV
+  - [dec_g711_alaw_file](./samples/dec_g711_alaw_file), [dec_g711_ulaw_file](./samples/dec_g711_ulaw_file) - G.711 to WAV
+  - [dec_mp3_file](./samples/dec_mp3_file) - MP3 to WAV
+  - [dec_opus_file](./samples/dec_opus_file) - Opus to WAV
+  - [dec_vorbis_file](./samples/dec_vorbis_file) - Vorbis to WAV
+  - [dec_avc_au](./samples/dec_avc_au), [dec_avc_file](./samples/dec_avc_file), [dec_avc_pull](./samples/dec_avc_pull) - H.264/AVC to YUV
+  - [dec_hevc_au](./samples/dec_hevc_au), [dec_hevc_file](./samples/dec_hevc_file) - H.265/HEVC to YUV
+  - [dec_vp8_file](./samples/dec_vp8_file) - VP8 to YUV
+  - [dec_vp9_file](./samples/dec_vp9_file) - VP9 to YUV
+
+- **Encoding**
+  - [enc_aac_adts_file](./samples/enc_aac_adts_file), [enc_aac_adts_pull](./samples/enc_aac_adts_pull), [enc_aac_adts_push](./samples/enc_aac_adts_push) - WAV to AAC/ADTS
+  - [enc_g711_alaw_file](./samples/enc_g711_alaw_file), [enc_g711_ulaw_file](./samples/enc_g711_ulaw_file) - WAV to G.711
+  - [enc_mp3_file](./samples/enc_mp3_file), [enc_mp3_pull](./samples/enc_mp3_pull), [enc_mp3_push](./samples/enc_mp3_push) - WAV to MP3
+  - [enc_opus_file](./samples/enc_opus_file) - WAV to Opus
+  - [enc_vorbis_file](./samples/enc_vorbis_file) - WAV to Vorbis
+  - [enc_avc_file](./samples/enc_avc_file), [enc_avc_pull](./samples/enc_avc_pull) - YUV to H.264/AVC
+  - [enc_hevc_file](./samples/enc_hevc_file), [enc_hevc_pull](./samples/enc_hevc_pull) - YUV to H.265/HEVC
+  - [enc_vp8_file](./samples/enc_vp8_file) - YUV to VP8
+  - [enc_vp9_file](./samples/enc_vp9_file) - YUV to VP9
+  - [enc_preset_file](./samples/enc_preset_file) - Encode using AVBlocks preset
+
+- **Misc**
+  - [re-encode](./samples/re-encode) - Re-encode audio and video streams in an MP4 file
+  - [slideshow](./samples/slideshow) - Create a video from a sequence of images
 
 # Development
 
