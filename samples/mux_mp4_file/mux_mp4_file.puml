@@ -1,0 +1,62 @@
+@startuml mux_mp4
+
+left to right direction
+
+skinparam rectangle {
+    BackgroundColor<<Transcoder>>      #4A90D9
+    BorderColor<<Transcoder>>          #1A5276
+    FontColor<<Transcoder>>            white
+    BackgroundColor<<MediaSocket>>     #27AE60
+    BorderColor<<MediaSocket>>         #1E8449
+    FontColor<<MediaSocket>>           white
+    BackgroundColor<<VideoStreamInfo>> #C0392B
+    BorderColor<<VideoStreamInfo>>     #922B21
+    FontColor<<VideoStreamInfo>>       white
+    BackgroundColor<<AudioStreamInfo>> #8E44AD
+    BorderColor<<AudioStreamInfo>>     #6C3483
+    FontColor<<AudioStreamInfo>>       white
+    BackgroundColor<<MediaPin>>        #F39C12
+    BorderColor<<MediaPin>>            #D68910
+    FontColor<<MediaPin>>              white
+}
+
+skinparam interface {
+    BackgroundColor #2C3E50
+    BorderColor     #2C3E50
+    FontColor       white
+}
+
+skinparam arrow {
+    Color     #2C3E50
+    FontColor #2C3E50
+}
+
+file "input.h264" as inVideoFile
+file "input.aac"  as inAudioFile
+file "output.mp4" as outFile
+
+rectangle "File: input.h264\nStreamType: H264\nStreamSubType: AnnexB" as inVideoSocket <<MediaSocket>>
+
+rectangle "File: input.aac\nStreamType: Aac\nStreamSubType: Adts" as inAudioSocket <<MediaSocket>>
+
+rectangle "\nOpen\nRun\nClose\n" as transcoder <<Transcoder>>
+
+rectangle "File: output.mp4\nStreamType: Mp4" as outSocket <<MediaSocket>> {
+    rectangle " audio " as outAudioPin <<MediaPin>> {
+        rectangle "StreamType: Aac\nStreamSubType: Mp4a\nSampleRate: source\nChannels: source\nBitrate: source" as asi <<AudioStreamInfo>>
+    }
+    
+    rectangle " video " as outVideoPin <<MediaPin>> {
+        rectangle "StreamType: H264\nStreamSubType: AvcC\nFrameRate: source\nWidth: source\nHeight: source" as vsi <<VideoStreamInfo>>
+    }
+}
+
+inVideoSocket -0)-  transcoder
+inAudioSocket -0)-  transcoder
+transcoder    -(0-  outSocket
+
+inVideoFile --> transcoder : reads
+inAudioFile --> transcoder : reads
+transcoder  --> outFile    : writes
+
+@enduml

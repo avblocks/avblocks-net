@@ -1,0 +1,51 @@
+@startuml enc_mp3_file
+
+left to right direction
+
+skinparam rectangle {
+    BackgroundColor<<Transcoder>>      #4A90D9
+    BorderColor<<Transcoder>>          #1A5276
+    FontColor<<Transcoder>>            white
+    BackgroundColor<<MediaSocket>>     #27AE60
+    BorderColor<<MediaSocket>>         #1E8449
+    FontColor<<MediaSocket>>           white
+    BackgroundColor<<AudioStreamInfo>> #8E44AD
+    BorderColor<<AudioStreamInfo>>     #6C3483
+    FontColor<<AudioStreamInfo>>       white
+    BackgroundColor<<MediaPin>>        #F39C12
+    BorderColor<<MediaPin>>            #D68910
+    FontColor<<MediaPin>>              white
+}
+
+skinparam interface {
+    BackgroundColor #2C3E50
+    BorderColor     #2C3E50
+    FontColor       white
+}
+
+skinparam arrow {
+    Color     #2C3E50
+    FontColor #2C3E50
+}
+
+file "input.wav" as inFile
+
+file "output.mp3" as outFile
+
+rectangle "File: input.mp3\nStreamType: auto-detect" as inSocket <<MediaSocket>>
+
+rectangle "\nOpen\nRun\nClose\n" as transcoder <<Transcoder>>
+
+rectangle "File: output.mp3\nStreamType: MpegAudio\nStreamSubType: Layer3" as outSocket <<MediaSocket>> {
+    rectangle " audio" as outPin <<MediaPin>> {
+        rectangle "StreamType: MpegAudio\nStreamSubType: Layer3\nBitrate: 128000\nSampleRate: source\nChannels: source" as asi <<AudioStreamInfo>>
+    }
+}
+
+inSocket  -0)-     transcoder
+transcoder -(0-    outSocket
+
+inFile    -->  transcoder : reads
+transcoder --> outFile : writes
+
+@enduml

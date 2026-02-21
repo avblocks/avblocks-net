@@ -1,0 +1,61 @@
+@startuml mux_webm_file
+
+left to right direction
+
+skinparam rectangle {
+    BackgroundColor<<Transcoder>>      #4A90D9
+    BorderColor<<Transcoder>>          #1A5276
+    FontColor<<Transcoder>>            white
+    BackgroundColor<<MediaSocket>>     #27AE60
+    BorderColor<<MediaSocket>>         #1E8449
+    FontColor<<MediaSocket>>           white
+    BackgroundColor<<VideoStreamInfo>> #C0392B
+    BorderColor<<VideoStreamInfo>>     #922B21
+    FontColor<<VideoStreamInfo>>       white
+    BackgroundColor<<AudioStreamInfo>> #8E44AD
+    BorderColor<<AudioStreamInfo>>     #6C3483
+    FontColor<<AudioStreamInfo>>       white
+    BackgroundColor<<MediaPin>>        #F39C12
+    BorderColor<<MediaPin>>            #D68910
+    FontColor<<MediaPin>>              white
+}
+
+skinparam interface {
+    BackgroundColor #2C3E50
+    BorderColor     #2C3E50
+    FontColor       white
+}
+
+skinparam arrow {
+    Color     #2C3E50
+    FontColor #2C3E50
+}
+
+file "input_audio.webm" as inAudioFile
+file "input_video.webm" as inVideoFile
+file "output.webm"      as outFile
+
+rectangle "File: input_audio.webm\nStreamType: WebM" as inAudioSocket <<MediaSocket>>
+
+rectangle "File: input_video.webm\nStreamType: WebM" as inVideoSocket <<MediaSocket>>
+
+rectangle "\nOpen\nRun\nClose\n" as transcoder <<Transcoder>>
+
+rectangle "File: output.webm\nStreamType: WebM" as outSocket <<MediaSocket>> {
+    rectangle " audio " as outAudioPin <<MediaPin>> {
+        rectangle "StreamType: Vorbis" as outAsi <<AudioStreamInfo>>
+    }
+    rectangle " video " as outVideoPin <<MediaPin>> {
+        rectangle "StreamType: Vp8" as outVsi <<VideoStreamInfo>>
+    }
+}
+
+inAudioSocket -0)-  transcoder
+inVideoSocket -0)-  transcoder
+transcoder    -(0-  outSocket
+
+inAudioFile --> transcoder : reads
+inVideoFile --> transcoder : reads
+transcoder  --> outFile    : writes
+
+@enduml
