@@ -1,7 +1,5 @@
 using System;
-using System.Reflection;
 using System.IO;
-using System.Collections.Generic;
 using PrimoSoftware.AVBlocks;
 
 namespace CliSample

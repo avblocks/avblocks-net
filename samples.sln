@@ -151,6 +151,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dec_vp9_file", "samples\dec
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "audio_upsample", "samples\audio_upsample\audio_upsample.csproj", "{11111111-1111-4111-8111-111111111111}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demux_webm_file", "samples\demux_webm_file\demux_webm_file.csproj", "{55555555-5555-4555-8555-555555555555}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
@@ -207,6 +212,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_hevc_file", "samples\en
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "enc_hevc_pull", "samples\enc_hevc_pull\enc_hevc_pull.csproj", "{ABABABAB-ABAB-4ABA-8ABA-ABABABABABAB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video_crop", "samples\video_crop\video_crop.csproj", "{12345678-9ABC-4DEF-0123-456789ABCDEF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video_framerate", "samples\video_framerate\video_framerate.csproj", "{87654321-9ABC-4DEF-0123-456789ABCDEF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video_pad", "samples\video_pad\video_pad.csproj", "{AABBCCDD-1111-4222-8333-AABBCCDD1111}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video_upscale", "samples\video_upscale\video_upscale.csproj", "{BBBCCDDE-2222-4333-8444-BBBCCDDE2222}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
 	EndProjectSection
@@ -268,6 +293,14 @@ Global
 		{F9012345-6789-4ABC-DEF0-123456789ABC}.Debug|x64.Build.0 = Debug|x64
 		{01234567-89AB-4CDE-F012-3456789ABCDE}.Debug|x64.ActiveCfg = Debug|x64
 		{01234567-89AB-4CDE-F012-3456789ABCDE}.Debug|x64.Build.0 = Debug|x64
+		{12345678-9ABC-4DEF-0123-456789ABCDEF}.Debug|x64.ActiveCfg = Debug|x64
+		{12345678-9ABC-4DEF-0123-456789ABCDEF}.Debug|x64.Build.0 = Debug|x64
+		{87654321-9ABC-4DEF-0123-456789ABCDEF}.Debug|x64.ActiveCfg = Debug|x64
+		{87654321-9ABC-4DEF-0123-456789ABCDEF}.Debug|x64.Build.0 = Debug|x64
+		{AABBCCDD-1111-4222-8333-AABBCCDD1111}.Debug|x64.ActiveCfg = Debug|x64
+		{AABBCCDD-1111-4222-8333-AABBCCDD1111}.Debug|x64.Build.0 = Debug|x64
+		{BBBCCDDE-2222-4333-8444-BBBCCDDE2222}.Debug|x64.ActiveCfg = Debug|x64
+		{BBBCCDDE-2222-4333-8444-BBBCCDDE2222}.Debug|x64.Build.0 = Debug|x64
 		{11111111-1111-4111-8111-111111111111}.Debug|x64.ActiveCfg = Debug|x64
 		{11111111-1111-4111-8111-111111111111}.Debug|x64.Build.0 = Debug|x64
 		{22222222-2222-4222-8222-222222222222}.Debug|x64.ActiveCfg = Debug|x64
@@ -347,6 +380,9 @@ Global
 		{EEEEEEEE-EEEE-4EEE-8EEE-EEEEEEEEEEEE} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{FFFFFFFF-FFFF-4FFF-8FFF-FFFFFFFFFFFF} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{ABABABAB-ABAB-4ABA-8ABA-ABABABABABAB} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{12345678-9ABC-4DEF-0123-456789ABCDEF} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{AABBCCDD-1111-4222-8333-AABBCCDD1111} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{BBBCCDDE-2222-4333-8444-BBBCCDDE2222} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE08AFDF-7EA5-4A0F-AD4E-C9307EF8EDE0}
