@@ -236,6 +236,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "video_upscale", "samples\vi
 		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simple_converter", "samples\simple_converter\simple_converter.csproj", "{CCDDCCDD-CCDD-4CCD-8CCD-CCDDCCDDCCDD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B7C00F56-BDFB-401D-931C-0A428E2BE46D} = {B7C00F56-BDFB-401D-931C-0A428E2BE46D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -333,6 +338,8 @@ Global
 		{FFFFFFFF-FFFF-4FFF-8FFF-FFFFFFFFFFFF}.Debug|x64.Build.0 = Debug|x64
 		{ABABABAB-ABAB-4ABA-8ABA-ABABABABABAB}.Debug|x64.ActiveCfg = Debug|x64
 		{ABABABAB-ABAB-4ABA-8ABA-ABABABABABAB}.Debug|x64.Build.0 = Debug|x64
+		{CCDDCCDD-CCDD-4CCD-8CCD-CCDDCCDDCCDD}.Debug|x64.ActiveCfg = Debug|x64
+		{CCDDCCDD-CCDD-4CCD-8CCD-CCDDCCDDCCDD}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -383,6 +390,7 @@ Global
 		{12345678-9ABC-4DEF-0123-456789ABCDEF} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{AABBCCDD-1111-4222-8333-AABBCCDD1111} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 		{BBBCCDDE-2222-4333-8444-BBBCCDDE2222} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
+		{CCDDCCDD-CCDD-4CCD-8CCD-CCDDCCDDCCDD} = {FBB3A151-2B0B-4726-91DC-8505FACD61CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE08AFDF-7EA5-4A0F-AD4E-C9307EF8EDE0}

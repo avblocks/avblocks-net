@@ -392,6 +392,12 @@ See [video_upscale](./video_upscale) for details.
 
 ## Misc
 
+### simple_converter
+
+Transcode a media file from H.264/AVC to H.265/HEVC using AVBlocks Transcoder with hardcoded input and output file paths.
+
+See [simple_converter](./simple_converter) for details.
+
 ### re-encode
 
 Take an MP4 input and re-encodes the audio and video streams back into an MP4 output. 
