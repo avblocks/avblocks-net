@@ -2,6 +2,135 @@
 
 AVBlocks .NET SDK (CLI Samples)
 
+# Installation
+
+Download and extract the AVBlocks .NET demo version and the demo assets for your platform. The SDK files will be placed under the `sdk/` directory and the demo assets under the `assets/` directory of this repository.
+
+For the available versions check the [AVBlocks .NET Core](https://github.com/avblocks/avblocks-net-core/releases) releases.
+
+## Linux
+
+```bash
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="linux"
+
+# download
+mkdir -p ./sdk/net10.0
+cd ./sdk/net10.0
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz
+
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz.sha256 \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-net10.0-$tag-$platform.tar.gz.sha256
+
+# extract
+tar -xvf avblocks-net10.0-$tag-$platform.tar.gz
+
+cd ../..
+```
+
+## macOS
+
+```bash
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="darwin"
+
+# download
+mkdir -p ./sdk/net10.0
+cd ./sdk/net10.0
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.zip \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
+
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.zip.sha256 \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-net10.0-$tag-$platform.zip.sha256
+
+# unzip
+unzip avblocks-net10.0-$tag-$platform.zip
+
+cd ../..
+```
+
+## Windows
+
+> Scripts are PowerShell
+
+```powershell
+# select version and platform
+$tag='v3.4.0-demo.1'
+$platform='windows'
+
+# download
+new-item -Force -ItemType Directory ./sdk/net10.0
+cd ./sdk/net10.0
+
+# sdk
+curl.exe `
+  --location `
+  --output ./avblocks-net10.0-$tag-$platform.zip `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
+
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-net10.0-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net10.0-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-net10.0-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { Write-Host "Checksum failed!"; }
+
+# unzip
+expand-archive -Force -Path avblocks-net10.0-$tag-$platform.zip -DestinationPath .
+
+cd ../..
+```
+
+On Windows you can also download the .NET Framework 4.8 build (`avblocks-net48-$tag-$platform.zip`) into `sdk/net48`.
+
+## Assets
+
+These demo audio and video assets are used as input for the AVBlocks samples.
+
+```bash
+mkdir -p ./assets
+cd ./assets
+
+curl \
+  --location \
+  --output ./avblocks_assets_v5.zip \
+  https://github.com/avblocks/avblocks-assets/releases/download/v5/avblocks_assets_v5.zip
+
+# unzip
+unzip avblocks_assets_v5.zip
+
+cd ..
+```
+
+For more details, see the platform-specific setup guides in [docs/](docs/).
+
 # Usage
 
 ## Getting Started
@@ -410,50 +539,76 @@ static void PrintError(string action, ErrorInfo error)
 }
 ```
 
-## Available Samples
+# Examples
 
-See [samples/README.md](./samples/README.md) for a complete list of working examples including:
+Complete working examples are available in the [samples](./samples) directory.
 
-- **Media Info**
-  - [info_stream_file](./samples/info_stream_file) - Extract audio/video stream information
-  - [info_metadata_file](./samples/info_metadata_file) - Extract metadata
+**Getting Started**
+- [`simple_converter`](./samples/simple_converter) — Transcode a media file from H.264/AVC to H.265/HEVC using a `Transcoder` with hardcoded input and output file paths
 
-- **Demuxing**
-  - [demux_mp4_file](./samples/demux_mp4_file) - Extract streams from MP4
-  - [demux_webm_file](./samples/demux_webm_file) - Extract streams from WebM
-  - [dump_avc_au](./samples/dump_avc_au) - Split H.264/AVC into Access Units
-  - [dump_hevc_au](./samples/dump_hevc_au) - Split H.265/HEVC into Access Units
+**Media Info**
+- [`info_metadata_file`](./samples/info_metadata_file) — Extract metadata information from a media file
+- [`info_stream_file`](./samples/info_stream_file) — Extract the audio/video stream information from a media file
 
-- **Muxing**
-  - [mux_mp4_file](./samples/mux_mp4_file) - Combine streams into MP4
-  - [mux_webm_file](./samples/mux_webm_file) - Combine streams into WebM
+**Decoding Audio**
+- [`dec_aac_adts_file`](./samples/dec_aac_adts_file) — Decode AAC file in ADTS format and save output to WAV file
+- [`dec_aac_adts_pull`](./samples/dec_aac_adts_pull) — Decode AAC file in ADTS format using `Transcoder.Pull` and save output to WAV file
+- [`dec_g711_alaw_file`](./samples/dec_g711_alaw_file) — Decode G.711 A-law WAV file to PCM WAV file
+- [`dec_g711_ulaw_file`](./samples/dec_g711_ulaw_file) — Decode G.711 μ-law WAV file to PCM WAV file
+- [`dec_mp3_file`](./samples/dec_mp3_file) — Decode MP3 file and save output to WAV file
+- [`dec_opus_file`](./samples/dec_opus_file) — Decode Opus OGG file and save output to WAV file
+- [`dec_vorbis_file`](./samples/dec_vorbis_file) — Decode Vorbis OGG file and save output to WAV file
 
-- **Decoding**
-  - [dec_aac_adts_file](./samples/dec_aac_adts_file), [dec_aac_adts_pull](./samples/dec_aac_adts_pull) - AAC/ADTS to WAV
-  - [dec_g711_alaw_file](./samples/dec_g711_alaw_file), [dec_g711_ulaw_file](./samples/dec_g711_ulaw_file) - G.711 to WAV
-  - [dec_mp3_file](./samples/dec_mp3_file) - MP3 to WAV
-  - [dec_opus_file](./samples/dec_opus_file) - Opus to WAV
-  - [dec_vorbis_file](./samples/dec_vorbis_file) - Vorbis to WAV
-  - [dec_avc_au](./samples/dec_avc_au), [dec_avc_file](./samples/dec_avc_file), [dec_avc_pull](./samples/dec_avc_pull) - H.264/AVC to YUV
-  - [dec_hevc_au](./samples/dec_hevc_au), [dec_hevc_file](./samples/dec_hevc_file) - H.265/HEVC to YUV
-  - [dec_vp8_file](./samples/dec_vp8_file) - VP8 to YUV
-  - [dec_vp9_file](./samples/dec_vp9_file) - VP9 to YUV
+**Decoding Video**
+- [`dec_avc_au`](./samples/dec_avc_au) — Decode an H.264 stream using a sequence of files to simulate a stream of H.264 Access Units
+- [`dec_avc_file`](./samples/dec_avc_file) — Decode AVC/H.264 compressed file to raw uncompressed YUV file
+- [`dec_avc_pull`](./samples/dec_avc_pull) — Decode AVC/H.264 file to YUV file using `Transcoder.Pull`
+- [`dec_hevc_au`](./samples/dec_hevc_au) — Decode an H.265 stream using a sequence of files to simulate a stream of H.265 Access Units
+- [`dec_hevc_file`](./samples/dec_hevc_file) — Decode HEVC/H.265 compressed file to raw uncompressed YUV file
+- [`dec_vp8_file`](./samples/dec_vp8_file) — Decode VP8 video in IVF container to raw uncompressed YUV file
+- [`dec_vp9_file`](./samples/dec_vp9_file) — Decode VP9 video in IVF container to raw uncompressed YUV file
 
-- **Encoding**
-  - [enc_aac_adts_file](./samples/enc_aac_adts_file), [enc_aac_adts_pull](./samples/enc_aac_adts_pull), [enc_aac_adts_push](./samples/enc_aac_adts_push) - WAV to AAC/ADTS
-  - [enc_g711_alaw_file](./samples/enc_g711_alaw_file), [enc_g711_ulaw_file](./samples/enc_g711_ulaw_file) - WAV to G.711
-  - [enc_mp3_file](./samples/enc_mp3_file), [enc_mp3_pull](./samples/enc_mp3_pull), [enc_mp3_push](./samples/enc_mp3_push) - WAV to MP3
-  - [enc_opus_file](./samples/enc_opus_file) - WAV to Opus
-  - [enc_vorbis_file](./samples/enc_vorbis_file) - WAV to Vorbis
-  - [enc_avc_file](./samples/enc_avc_file), [enc_avc_pull](./samples/enc_avc_pull) - YUV to H.264/AVC
-  - [enc_hevc_file](./samples/enc_hevc_file), [enc_hevc_pull](./samples/enc_hevc_pull) - YUV to H.265/HEVC
-  - [enc_vp8_file](./samples/enc_vp8_file) - YUV to VP8
-  - [enc_vp9_file](./samples/enc_vp9_file) - YUV to VP9
-  - [enc_preset_file](./samples/enc_preset_file) - Encode using AVBlocks preset
+**Encoding Audio**
+- [`enc_aac_adts_file`](./samples/enc_aac_adts_file) — Encode WAV file to AAC file in ADTS format
+- [`enc_aac_adts_pull`](./samples/enc_aac_adts_pull) — Encode WAV file to AAC file in ADTS format using `Transcoder.Pull`
+- [`enc_aac_adts_push`](./samples/enc_aac_adts_push) — Encode WAV file to AAC file in ADTS format using `Transcoder.Push`
+- [`enc_g711_alaw_file`](./samples/enc_g711_alaw_file) — Encode WAV file to G.711 A-law WAV file
+- [`enc_g711_ulaw_file`](./samples/enc_g711_ulaw_file) — Encode WAV file to G.711 μ-law WAV file
+- [`enc_mp3_file`](./samples/enc_mp3_file) — Encode WAV file to MP3 file
+- [`enc_mp3_pull`](./samples/enc_mp3_pull) — Encode WAV file to MP3 file using `Transcoder.Pull`
+- [`enc_mp3_push`](./samples/enc_mp3_push) — Encode WAV file to MP3 file using `Transcoder.Push`
+- [`enc_opus_file`](./samples/enc_opus_file) — Encode WAV file to Opus OGG file
+- [`enc_vorbis_file`](./samples/enc_vorbis_file) — Encode WAV file to Vorbis OGG file
 
-- **Misc**
-  - [re-encode](./samples/re-encode) - Re-encode audio and video streams in an MP4 file
-  - [slideshow](./samples/slideshow) - Create a video from a sequence of images
+**Encoding Video**
+- [`enc_avc_file`](./samples/enc_avc_file) — Encode raw YUV video file to AVC/H.264 video file using `Transcoder.Run`
+- [`enc_avc_pull`](./samples/enc_avc_pull) — Encode raw YUV video file to AVC/H.264 video file using `Transcoder.Pull`
+- [`enc_hevc_file`](./samples/enc_hevc_file) — Encode raw YUV video file to HEVC/H.265 video file using `Transcoder.Run`
+- [`enc_hevc_pull`](./samples/enc_hevc_pull) — Encode raw YUV video file to HEVC/H.265 video file using `Transcoder.Pull`
+- [`enc_preset_file`](./samples/enc_preset_file) — Convert a raw YUV video file to a compressed video file using an AVBlocks preset
+- [`enc_vp8_file`](./samples/enc_vp8_file) — Encode raw YUV video file to VP8 video in IVF container
+- [`enc_vp9_file`](./samples/enc_vp9_file) — Encode raw YUV video file to VP9 video in IVF container
+
+**Muxing / Demuxing**
+- [`demux_mp4_file`](./samples/demux_mp4_file) — Extract the first audio and video elementary stream from an MP4 container into separate MP4 files
+- [`demux_webm_file`](./samples/demux_webm_file) — Extract the audio and video elementary streams from a WebM container into separate files
+- [`dump_avc_au`](./samples/dump_avc_au) — Split an H.264 (AVC) elementary stream into Access Units, writing each to a separate file
+- [`dump_hevc_au`](./samples/dump_hevc_au) — Split an H.265 (HEVC) elementary stream into Access Units, writing each to a separate file
+- [`mux_mp4_file`](./samples/mux_mp4_file) — Multiplex two single-stream MP4 files (AAC audio + H.264 video) into an MP4 container
+- [`mux_webm_file`](./samples/mux_webm_file) — Multiplex Vorbis/OGG audio and VP8/IVF video files into a WebM container
+
+**Advanced**
+- [`re-encode`](./samples/re-encode) — Re-encode the audio and video streams of an MP4 file back into an MP4 output
+- [`slideshow`](./samples/slideshow) — Create a video clip from a sequence of images
+
+**Audio Processing**
+- [`audio_upsample`](./samples/audio_upsample) — Upsample audio from 44.1 KHz to 48 KHz
+
+**Video Processing**
+- [`video_crop`](./samples/video_crop) — Crop a video by removing pixels from the edges
+- [`video_framerate`](./samples/video_framerate) — Change the frame rate of a video from 24 fps to 30 fps
+- [`video_pad`](./samples/video_pad) — Add black border padding around a video
+- [`video_upscale`](./samples/video_upscale) — Upscale a video to Full HD (1920×1080) using bicubic interpolation
 
 # Development
 
