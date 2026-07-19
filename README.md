@@ -1,6 +1,6 @@
 # avblocks-net
 
-AVBlocks .NET SDK (CLI Samples)
+AVBlocks - Audio SDK - Video SDK - .NET SDK - CLI Samples
 
 # Installation
 
