@@ -2,6 +2,13 @@
 
 AVBlocks - Audio SDK - Video SDK - .NET SDK - CLI Samples
 
+# Docs
+
+- [API Docs](https://doc.avblocks.com/net/latest/) — Online API reference for the AVBlocks .NET SDK
+- [Wiki](https://wiki-net.avblocks.com/) — Documentation and guides
+- [Blog](https://blog.avblocks.com/) — News and updates
+
+
 # Installation
 
 Download and extract the AVBlocks .NET demo version and the demo assets for your platform. The SDK files will be placed under the `sdk/` directory and the demo assets under the `assets/` directory of this repository.
