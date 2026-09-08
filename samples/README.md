@@ -1,5 +1,43 @@
 # Samples - .NET
 
+## Getting Started
+
+### simple_converter
+
+Transcodes an H.264/AVC video to H.265/HEVC.
+
+See [simple_converter](./simple_converter) for build and run instructions.
+
+### simple_audio_upsample
+
+Upsamples an MP3 audio clip from 44.1 KHz to 48 KHz.
+
+See [simple_audio_upsample](./simple_audio_upsample) for build and run instructions.
+
+### simple_video_crop
+
+Crops a 16:9 video to 4:3.
+
+See [simple_video_crop](./simple_video_crop) for build and run instructions.
+
+### simple_video_pad
+
+Fits a 16:9 video into a 4:3 frame by resizing and padding the picture.
+
+See [simple_video_pad](./simple_video_pad) for build and run instructions.
+
+### simple_video_upscale
+
+Scales a 480p video up to Full HD 1080p.
+
+See [simple_video_upscale](./simple_video_upscale) for build and run instructions.
+
+### simple_video_framerate
+
+Changes the frame rate of a video from 24 fps to 30 fps.
+
+See [simple_video_framerate](./simple_video_framerate) for build and run instructions.
+
 ## Media Info
 
 ### info_metadata_file
@@ -391,12 +429,6 @@ See [video_upscale](./video_upscale) for details.
 ---
 
 ## Misc
-
-### simple_converter
-
-Transcode a media file from H.264/AVC to H.265/HEVC using AVBlocks Transcoder with hardcoded input and output file paths.
-
-See [simple_converter](./simple_converter) for details.
 
 ### re-encode
 

@@ -21,20 +21,20 @@ From the repository root:
 dotnet build samples.sln
 ```
 
-The built executable will be placed in `bin/net10.0/simple_converter` (or `bin/net48/simple_converter.exe` on Windows).
+The built executable will be placed in `bin/net10.0/simple_converter` (or `bin/net10/simple_converter.exe` on Windows).
 
 ## Running
 
 1. Download the sample video:
 
     ```sh
+    cd samples/simple_converter
     curl -L -o Wildlife_h264_aac.mp4 https://archive.org/download/WildlifeSampleVideo/Wildlife.mp4
     ```
 
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    cd samples/simple_converter
     ../../bin/net10.0/simple_converter
     ```
 
