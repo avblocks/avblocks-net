@@ -13,7 +13,7 @@ enc_vp8_file --frame <width>x<height> --rate <fps> --color <color> --input <file
 List options:
 
 ```sh
-./bin/net10.0/enc_vp8_file --help
+./bin/x64/net10.0/enc_vp8_file --help
 enc_vp8_file 1.0.0.0
 
   -i, --input     input YUV file
@@ -36,7 +36,7 @@ enc_vp8_file 1.0.0.0
 List supported color spaces for input:
 
 ```sh
-./bin/net10.0/enc_vp8_file --colors
+./bin/x64/net10.0/enc_vp8_file --colors
 
 COLORS
 ---------
@@ -69,7 +69,7 @@ Encode the input file `./assets/vid/foreman_qcif.yuv` into output file `./output
 # Linux and macOS 
 mkdir -p ./output/enc_vp8_file
 
-./bin/net10.0/enc_vp8_file \
+./bin/x64/net10.0/enc_vp8_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --output ./output/enc_vp8_file/foreman_qcif.ivf \
     --frame 176x144 --rate 30 --color yuv420
@@ -79,7 +79,29 @@ mkdir -p ./output/enc_vp8_file
 # Windows
 mkdir -Force -Path ./output/enc_vp8_file
 
-./bin/net10.0/enc_vp8_file `
+./bin/x64/net10.0/enc_vp8_file `
+    --input ./assets/vid/foreman_qcif.yuv `
+    --output ./output/enc_vp8_file/foreman_qcif.ivf `
+    --frame 176x144 --rate 30 --color yuv420 
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_vp8_file
+
+./bin/arm64/net10.0/enc_vp8_file \
+    --input ./assets/vid/foreman_qcif.yuv \
+    --output ./output/enc_vp8_file/foreman_qcif.ivf \
+    --frame 176x144 --rate 30 --color yuv420
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_vp8_file
+
+./bin/arm64/net10.0/enc_vp8_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --output ./output/enc_vp8_file/foreman_qcif.ivf `
     --frame 176x144 --rate 30 --color yuv420 

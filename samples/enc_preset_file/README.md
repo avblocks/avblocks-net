@@ -13,7 +13,7 @@ enc_preset_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <f
 List options:
 
 ```sh
-./bin/net10.0/enc_preset_file --help
+./bin/x64/net10.0/enc_preset_file --help
 enc_preset_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -44,7 +44,7 @@ Encode a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.264 video in 
 # Linux and macOS 
 mkdir -p ./output/enc_preset_file
 
-./bin/net10.0/enc_preset_file \
+./bin/x64/net10.0/enc_preset_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --frame 176x144 --rate 30 --color yuv420 \
     --output ./output/enc_avc_file/foreman_qcif.h264 \
@@ -55,7 +55,31 @@ mkdir -p ./output/enc_preset_file
 # Windows
 mkdir -Force -Path ./output/enc_preset_file
 
-./bin/net10.0/enc_preset_file `
+./bin/x64/net10.0/enc_preset_file `
+    --input ./assets/vid/foreman_qcif.yuv `
+    --frame 176x144 --rate 30 --color yuv420 `
+    --output ./output/enc_avc_file/foreman_qcif.h264 `
+    --preset ipad.mp4.h264.720p
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_preset_file
+
+./bin/arm64/net10.0/enc_preset_file \
+    --input ./assets/vid/foreman_qcif.yuv \
+    --frame 176x144 --rate 30 --color yuv420 \
+    --output ./output/enc_avc_file/foreman_qcif.h264 \
+    --preset ipad.mp4.h264.720p
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_preset_file
+
+./bin/arm64/net10.0/enc_preset_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --frame 176x144 --rate 30 --color yuv420 `
     --output ./output/enc_avc_file/foreman_qcif.h264 `
@@ -65,7 +89,7 @@ mkdir -Force -Path ./output/enc_preset_file
 List supported color spaces for input:
 
 ```sh
-./bin/net10.0/enc_preset_file --colors
+./bin/x64/net10.0/enc_preset_file --colors
 
 COLORS
 ---------
@@ -95,7 +119,7 @@ yvu9                 Planar Y, V, U, 9 bits per sample
 List supported presets for input:
 
 ```sh
-./bin/net10.0/enc_preset_file --presets
+./bin/x64/net10.0/enc_preset_file --presets
 
 PRESETS
 -----------

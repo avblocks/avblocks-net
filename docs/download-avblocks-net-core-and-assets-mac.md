@@ -10,14 +10,16 @@ cd avblocks-net
 
 In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks .NET Core](https://github.com/avblocks/avblocks-net-core/releases) releases.   
 
+### Apple Silicon (arm64)
+
 ```bash
 # select version and platform
 tag="v3.4.0-demo.1"
-platform="darwin"
+platform="darwin-arm64"
 
 # download
-mkdir -p ./sdk/net10.0
-cd ./sdk/net10.0
+mkdir -p ./sdk/arm64/net10.0
+cd ./sdk/arm64/net10.0
 
 # sdk
 curl \
@@ -25,6 +27,37 @@ curl \
   --output ./avblocks-net10.0-$tag-$platform.zip \
   https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
 
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.zip.sha256 \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-net10.0-$tag-$platform.zip.sha256
+
+# unzip
+unzip avblocks-net10.0-$tag-$platform.zip
+
+cd ../..
+```
+
+### Intel (x64)
+
+```bash
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="darwin"
+
+# download
+mkdir -p ./sdk/x64/net10.0
+cd ./sdk/x64/net10.0
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.zip \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
 
 # sha256 checksum
 curl \

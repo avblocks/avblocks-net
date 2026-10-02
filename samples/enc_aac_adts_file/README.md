@@ -13,7 +13,7 @@ enc_aac_adts_file --input <wav file> --output <aac file>
 List options:
 
 ```sh
-./bin/net10.0/enc_aac_adts_file --help
+./bin/x64/net10.0/enc_aac_adts_file --help
 enc_aac_adts_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -32,7 +32,18 @@ Encode the input file `./assets/aud/equinox-48KHz.wav` into output file `./outpu
 # Linux and macOS 
 mkdir -p ./output/enc_aac_adts_file
 
-./bin/net10.0/enc_aac_adts_file \
+./bin/x64/net10.0/enc_aac_adts_file \
+    --input ./assets/aud/equinox-48KHz.wav \
+    --output ./output/enc_aac_adts_file/equinox-48KHz.adts.aac
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_aac_adts_file
+
+./bin/arm64/net10.0/enc_aac_adts_file \
     --input ./assets/aud/equinox-48KHz.wav \
     --output ./output/enc_aac_adts_file/equinox-48KHz.adts.aac
 ```
@@ -41,7 +52,7 @@ mkdir -p ./output/enc_aac_adts_file
 # Windows
 mkdir -Force -Path ./output/enc_aac_adts_file
 
-./bin/net10.0/enc_aac_adts_file `
+./bin/x64/net10.0/enc_aac_adts_file `
     --input ./assets/aud/equinox-48KHz.wav `
     --output ./output/enc_aac_adts_file/equinox-48KHz.adts.aac
 ```

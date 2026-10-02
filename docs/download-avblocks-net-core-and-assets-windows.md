@@ -20,8 +20,8 @@ $tag='v3.4.0-demo.1'
 $platform='windows'
 
 # download
-new-item -Force -ItemType Directory ./sdk/net10.0
-cd ./sdk/net10.0
+new-item -Force -ItemType Directory ./sdk/x64/net10.0
+cd ./sdk/x64/net10.0
 
 # sdk
 curl.exe `
@@ -49,8 +49,8 @@ cd ../..
 ### .NET Framework 4.8 
 
 ```powershell
-new-item -Force -ItemType Directory ./sdk/net48
-cd ./sdk/net48
+new-item -Force -ItemType Directory ./sdk/x64/net48
+cd ./sdk/x64/net48
 
 # sdk
 curl.exe `

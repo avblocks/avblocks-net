@@ -13,7 +13,7 @@ enc_hevc_file --frame <width>x<height> --rate <fps> --color <color> --input <fil
 List options:
 
 ```sh
-./bin/net10.0/enc_hevc_file --help
+./bin/x64/net10.0/enc_hevc_file --help
 enc_hevc_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -40,7 +40,7 @@ Encode a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.265 video in 
 # Linux and macOS 
 mkdir -p ./output/enc_hevc_file
 
-./bin/net10.0/enc_hevc_file \
+./bin/x64/net10.0/enc_hevc_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --output ./output/enc_hevc_file/foreman_qcif.h265 \
     --frame 176x144 \
@@ -52,7 +52,33 @@ mkdir -p ./output/enc_hevc_file
 # Windows
 mkdir -Force -Path ./output/enc_hevc_file
 
-./bin/net10.0/enc_hevc_file `
+./bin/x64/net10.0/enc_hevc_file `
+    --input ./assets/vid/foreman_qcif.yuv `
+    --output ./output/enc_hevc_file/foreman_qcif.h265 `
+    --frame 176x144 `
+    --rate 30 `
+    --color yuv420
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_hevc_file
+
+./bin/arm64/net10.0/enc_hevc_file \
+    --input ./assets/vid/foreman_qcif.yuv \
+    --output ./output/enc_hevc_file/foreman_qcif.h265 \
+    --frame 176x144 \
+    --rate 30 \
+    --color yuv420
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_hevc_file
+
+./bin/arm64/net10.0/enc_hevc_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --output ./output/enc_hevc_file/foreman_qcif.h265 `
     --frame 176x144 `

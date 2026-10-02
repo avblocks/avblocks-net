@@ -13,21 +13,37 @@ dump_avc_au --input <h264-file> --output <folder>
 List options:
 
 ```sh
-./bin/net10.0/dump_avc_au --help
+./bin/x64/net10.0/dump_avc_au --help
 ```
 
 Parse the H.264 file `./assets/vid/foreman_qcif.h264` and dump Access Units to `./output/dump_avc_au/`:
 
 ```sh
 # Linux and macOS 
-./bin/net10.0/dump_avc_au \
+./bin/x64/net10.0/dump_avc_au \
     --input ./assets/vid/foreman_qcif.h264 \
     --output ./output/dump_avc_au
 ```
 
 ```powershell
 # Windows
-./bin/net10.0/dump_avc_au `
+./bin/x64/net10.0/dump_avc_au `
+    --input ./assets/vid/foreman_qcif.h264 `
+    --output ./output/dump_avc_au
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+./bin/arm64/net10.0/dump_avc_au \
+    --input ./assets/vid/foreman_qcif.h264 \
+    --output ./output/dump_avc_au
+```
+
+```powershell
+# Windows (arm64)
+./bin/arm64/net10.0/dump_avc_au `
     --input ./assets/vid/foreman_qcif.h264 `
     --output ./output/dump_avc_au
 ```

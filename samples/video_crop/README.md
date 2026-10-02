@@ -13,7 +13,7 @@ video_crop -i <input.mp4> -o <output.mp4> [--crop-left <left>] [--crop-right <ri
 List options:
 
 ```sh
-./bin/net10.0/video_crop --help
+./bin/x64/net10.0/video_crop --help
 video_crop 1.0.0.0
 Copyright (C) 2026 Primo Software
 
@@ -39,7 +39,19 @@ Crop `./assets/vid/big_buck_bunny_trailer.vid.mp4` from 16:9 (480x270) to 4:3 (3
 ```sh
 mkdir -p ./output/video_crop
 
-./bin/net10.0/video_crop \
+./bin/x64/net10.0/video_crop \
+    --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
+    --output ./output/video_crop/cropped.mp4 \
+    --crop-left 60 \
+    --crop-right 60
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+mkdir -p ./output/video_crop
+
+./bin/arm64/net10.0/video_crop \
     --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
     --output ./output/video_crop/cropped.mp4 \
     --crop-left 60 \

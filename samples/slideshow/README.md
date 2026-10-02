@@ -13,7 +13,7 @@ slideshow --input <directory> --output <filename_without_extension> --preset <pr
 List options:
 
 ```sh
-./bin/net10.0/slideshow --help
+./bin/x64/net10.0/slideshow --help
 slideshow 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -34,7 +34,7 @@ Create an MP4 / H.264 clip from a sequence of images in the `./assets/img` folde
 # Linux and macOS 
 mkdir -p ./output/slideshow
 
-./bin/net10.0/slideshow \
+./bin/x64/net10.0/slideshow \
     --input ./assets/img \
     --output ./output/slideshow/cube \
     --preset mp4.h264.aac
@@ -44,7 +44,29 @@ mkdir -p ./output/slideshow
 # Windows
 mkdir -Force -Path ./output/slideshow
 
-./bin/net10.0/slideshow `
+./bin/x64/net10.0/slideshow `
+    --input ./assets/img `
+    --output ./output/slideshow/cube `
+    --preset mp4.h264.aac
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/slideshow
+
+./bin/arm64/net10.0/slideshow \
+    --input ./assets/img \
+    --output ./output/slideshow/cube \
+    --preset mp4.h264.aac
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/slideshow
+
+./bin/arm64/net10.0/slideshow `
     --input ./assets/img `
     --output ./output/slideshow/cube `
     --preset mp4.h264.aac
@@ -53,7 +75,7 @@ mkdir -Force -Path ./output/slideshow
 List supported presets for input:
 
 ```sh
-./bin/net10.0/slideshow --presets
+./bin/x64/net10.0/slideshow --presets
 
 PRESETS
 -----------

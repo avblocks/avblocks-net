@@ -13,7 +13,7 @@ enc_hevc_pull --frame <width>x<height> --rate <fps> --color <COLOR> --input <fil
 List options:
 
 ```sh
-./bin/net10.0/enc_hevc_pull --help
+./bin/x64/net10.0/enc_hevc_pull --help
 enc_hevc_pull 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -38,7 +38,7 @@ Copyright (C) 2023 Primo Software
 List supported color spaces:
 
 ```sh
-./bin/net10.0/enc_hevc_pull --colors
+./bin/x64/net10.0/enc_hevc_pull --colors
 
 COLORS
 ---------
@@ -71,7 +71,7 @@ Encode a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.265 video in 
 # Linux and macOS 
 mkdir -p ./output/enc_hevc_pull
 
-./bin/net10.0/enc_hevc_pull \
+./bin/x64/net10.0/enc_hevc_pull \
     --input ./assets/vid/foreman_qcif.yuv \
     --output ./output/enc_hevc_pull/foreman_qcif.h265 \
     --frame 176x144 \
@@ -83,7 +83,33 @@ mkdir -p ./output/enc_hevc_pull
 # Windows
 mkdir -Force -Path ./output/enc_hevc_pull
 
-./bin/net10.0/enc_hevc_pull `
+./bin/x64/net10.0/enc_hevc_pull `
+    --input ./assets/vid/foreman_qcif.yuv `
+    --output ./output/enc_hevc_pull/foreman_qcif.h265 `
+    --frame 176x144 `
+    --rate 30 `
+    --color yuv420
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_hevc_pull
+
+./bin/arm64/net10.0/enc_hevc_pull \
+    --input ./assets/vid/foreman_qcif.yuv \
+    --output ./output/enc_hevc_pull/foreman_qcif.h265 \
+    --frame 176x144 \
+    --rate 30 \
+    --color yuv420
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_hevc_pull
+
+./bin/arm64/net10.0/enc_hevc_pull `
     --input ./assets/vid/foreman_qcif.yuv `
     --output ./output/enc_hevc_pull/foreman_qcif.h265 `
     --frame 176x144 `

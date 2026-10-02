@@ -13,21 +13,37 @@ dump_hevc_au --input <h265-file> --output <folder>
 List options:
 
 ```sh
-./bin/net10.0/dump_hevc_au --help
+./bin/x64/net10.0/dump_hevc_au --help
 ```
 
 Parse the H.265 file `./assets/vid/foreman_qcif.h265` and dump Access Units to `./output/dump_hevc_au/`:
 
 ```sh
 # Linux and macOS 
-./bin/net10.0/dump_hevc_au \
+./bin/x64/net10.0/dump_hevc_au \
     --input ./assets/vid/foreman_qcif.h265 \
     --output ./output/dump_hevc_au
 ```
 
 ```powershell
 # Windows
-./bin/net10.0/dump_hevc_au `
+./bin/x64/net10.0/dump_hevc_au `
+    --input ./assets/vid/foreman_qcif.h265 `
+    --output ./output/dump_hevc_au
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+./bin/arm64/net10.0/dump_hevc_au \
+    --input ./assets/vid/foreman_qcif.h265 \
+    --output ./output/dump_hevc_au
+```
+
+```powershell
+# Windows (arm64)
+./bin/arm64/net10.0/dump_hevc_au `
     --input ./assets/vid/foreman_qcif.h265 `
     --output ./output/dump_hevc_au
 ```

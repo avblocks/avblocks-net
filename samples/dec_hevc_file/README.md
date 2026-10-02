@@ -14,7 +14,7 @@ dec_hevc_file --input <file.h265> --output <file.yuv>
 List options:
 
 ```sh
-./bin/net10.0/dec_hevc_file --help
+./bin/x64/net10.0/dec_hevc_file --help
 ```
 
 Decode the H.265 file `./assets/vid/foreman_qcif.h265` to YUV output:
@@ -23,7 +23,7 @@ Decode the H.265 file `./assets/vid/foreman_qcif.h265` to YUV output:
 # Linux and macOS 
 mkdir -p ./output/dec_hevc_file
 
-./bin/net10.0/dec_hevc_file \
+./bin/x64/net10.0/dec_hevc_file \
     --input ./assets/vid/foreman_qcif.h265 \
     --output ./output/dec_hevc_file/foreman_qcif.yuv
 ```
@@ -32,7 +32,27 @@ mkdir -p ./output/dec_hevc_file
 # Windows
 mkdir -Force -Path ./output/dec_hevc_file
 
-./bin/net10.0/dec_hevc_file `
+./bin/x64/net10.0/dec_hevc_file `
+    --input ./assets/vid/foreman_qcif.h265 `
+    --output ./output/dec_hevc_file/foreman_qcif.yuv
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_hevc_file
+
+./bin/arm64/net10.0/dec_hevc_file \
+    --input ./assets/vid/foreman_qcif.h265 \
+    --output ./output/dec_hevc_file/foreman_qcif.yuv
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_hevc_file
+
+./bin/arm64/net10.0/dec_hevc_file `
     --input ./assets/vid/foreman_qcif.h265 `
     --output ./output/dec_hevc_file/foreman_qcif.yuv
 ```

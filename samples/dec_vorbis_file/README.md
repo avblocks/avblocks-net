@@ -13,7 +13,7 @@ dec_vorbis_file --input <ogg file> --output <wav file>
 List options:
 
 ```sh
-./bin/net10.0/dec_vorbis_file --help
+./bin/x64/net10.0/dec_vorbis_file --help
 dec_vorbis_file 1.0.0.0
 
   -i, --input     input OGG file
@@ -31,7 +31,7 @@ Decode the input file `./assets/aud/Hydrate-Kenny_Beltrey.ogg` into output file 
 # Linux and macOS 
 mkdir -p ./output/dec_vorbis_file
 
-./bin/net10.0/dec_vorbis_file \
+./bin/x64/net10.0/dec_vorbis_file \
   --input ./assets/aud/Hydrate-Kenny_Beltrey.ogg \
   --output ./output/dec_vorbis_file/Hydrate-Kenny_Beltrey.wav
 ```
@@ -40,7 +40,27 @@ mkdir -p ./output/dec_vorbis_file
 # Windows
 mkdir -Force -Path ./output/dec_vorbis_file
 
-./bin/net10.0/dec_vorbis_file `
+./bin/x64/net10.0/dec_vorbis_file `
+  --input ./assets/aud/Hydrate-Kenny_Beltrey.ogg `
+  --output ./output/dec_vorbis_file/Hydrate-Kenny_Beltrey.wav
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_vorbis_file
+
+./bin/arm64/net10.0/dec_vorbis_file \
+  --input ./assets/aud/Hydrate-Kenny_Beltrey.ogg \
+  --output ./output/dec_vorbis_file/Hydrate-Kenny_Beltrey.wav
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_vorbis_file
+
+./bin/arm64/net10.0/dec_vorbis_file `
   --input ./assets/aud/Hydrate-Kenny_Beltrey.ogg `
   --output ./output/dec_vorbis_file/Hydrate-Kenny_Beltrey.wav
 ```

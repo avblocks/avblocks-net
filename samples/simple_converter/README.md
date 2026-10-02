@@ -21,7 +21,7 @@ From the repository root:
 dotnet build samples.sln
 ```
 
-The built executable will be placed in `bin/net10.0/simple_converter` (or `bin/net10/simple_converter.exe` on Windows).
+The built executable will be placed in `bin/<arch>/net10.0/simple_converter` (or `bin/<arch>/net10.0/simple_converter.exe` on Windows), where `<arch>` is `x64` or `arm64`.
 
 ## Running
 
@@ -35,7 +35,13 @@ The built executable will be placed in `bin/net10.0/simple_converter` (or `bin/n
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    ../../bin/net10.0/simple_converter
+    ../../bin/x64/net10.0/simple_converter
+    ```
+
+   On ARM platforms use the arm64 build:
+
+    ```sh
+    ../../bin/arm64/net10.0/simple_converter
     ```
 
 3. The transcoded output file `Wildlife_h265_aac.mp4` will be created in the `samples/simple_converter` directory.

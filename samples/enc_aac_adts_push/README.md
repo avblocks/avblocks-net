@@ -13,7 +13,7 @@ enc_aac_adts_push --input <wav file> --output <aac file>
 List options:
 
 ```sh
-./bin/net10.0/enc_aac_adts_push --help
+./bin/x64/net10.0/enc_aac_adts_push --help
 enc_aac_adts_push 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -32,7 +32,7 @@ Encode the input file `./assets/aud/equinox-48KHz.wav` into output file `./outpu
 # Linux and macOS 
 mkdir -p ./output/enc_aac_adts_push
 
-./bin/net10.0/enc_aac_adts_push \
+./bin/x64/net10.0/enc_aac_adts_push \
     --input ./assets/aud/equinox-48KHz.wav \
     --output ./output/enc_aac_adts_push/equinox-48KHz.adts.aac
 ```
@@ -41,7 +41,27 @@ mkdir -p ./output/enc_aac_adts_push
 # Windows
 mkdir -Force -Path ./output/enc_aac_adts_push
 
-./bin/net10.0/enc_aac_adts_push `
+./bin/x64/net10.0/enc_aac_adts_push `
+    --input ./assets/aud/equinox-48KHz.wav `
+    --output ./output/enc_aac_adts_push/equinox-48KHz.adts.aac
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_aac_adts_push
+
+./bin/arm64/net10.0/enc_aac_adts_push \
+    --input ./assets/aud/equinox-48KHz.wav \
+    --output ./output/enc_aac_adts_push/equinox-48KHz.adts.aac
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_aac_adts_push
+
+./bin/arm64/net10.0/enc_aac_adts_push `
     --input ./assets/aud/equinox-48KHz.wav `
     --output ./output/enc_aac_adts_push/equinox-48KHz.adts.aac
 ```

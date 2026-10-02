@@ -13,7 +13,7 @@ dec_aac_adts_file --input <aac file> --output <wav file>
 List options:
 
 ```sh
-./bin/net10.0/dec_aac_adts_file --help
+./bin/x64/net10.0/dec_aac_adts_file --help
 dec_aac_adts_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -32,7 +32,7 @@ Decode the input file `./assets/aud/Hydrate-Kenny_Beltrey.adts.aac` into output 
 # Linux and macOS 
 mkdir -p ./output/dec_aac_adts_file
 
-./bin/net10.0/dec_aac_adts_file \
+./bin/x64/net10.0/dec_aac_adts_file \
     --input ./assets/aud/Hydrate-Kenny_Beltrey.adts.aac \
     --output ./output/dec_aac_adts_file/Hydrate-Kenny_Beltrey.wav
 ```
@@ -41,7 +41,27 @@ mkdir -p ./output/dec_aac_adts_file
 # Windows
 mkdir -Force -Path ./output/dec_aac_adts_file
 
-./bin/net10.0/dec_aac_adts_file `
+./bin/x64/net10.0/dec_aac_adts_file `
+    --input ./assets/aud/Hydrate-Kenny_Beltrey.adts.aac `
+    --output ./output/dec_aac_adts_file/Hydrate-Kenny_Beltrey.wav
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_aac_adts_file
+
+./bin/arm64/net10.0/dec_aac_adts_file \
+    --input ./assets/aud/Hydrate-Kenny_Beltrey.adts.aac \
+    --output ./output/dec_aac_adts_file/Hydrate-Kenny_Beltrey.wav
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_aac_adts_file
+
+./bin/arm64/net10.0/dec_aac_adts_file `
     --input ./assets/aud/Hydrate-Kenny_Beltrey.adts.aac `
     --output ./output/dec_aac_adts_file/Hydrate-Kenny_Beltrey.wav
 ```

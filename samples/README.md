@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+Samples build into `bin/<arch>/net10.0`, where `<arch>` is `x64` (default) or `arm64` (build with `-p:Platform=arm64`). The examples in the sample READMEs use `./bin/x64/net10.0/...`; on ARM platforms use `./bin/arm64/net10.0/...`.
+
 ### simple_converter
 
 Transcodes an H.264/AVC video to H.265/HEVC.

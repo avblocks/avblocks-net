@@ -13,7 +13,7 @@ video_upscale -i <mp4 file> -o <mp4 file> [-w <width>] [-h <height>]
 List options:
 
 ```sh
-./bin/net10.0/video_upscale --help
+./bin/x64/net10.0/video_upscale --help
 Usage: video_upscale -i <mp4 file> -o <mp4 file> [-w <width>] [-h <height>]
   -h,    --help
          --input    MP4 input file.
@@ -27,7 +27,19 @@ Upscale the input file `./assets/vid/big_buck_bunny_trailer.vid.mp4` to 1920x108
 ```sh
 mkdir -p ./output/video_upscale
 
-./bin/net10.0/video_upscale \
+./bin/x64/net10.0/video_upscale \
+    --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
+    --output ./output/video_upscale/big_buck_bunny_1080p.mp4 \
+    --width 1920 \
+    --height 1080
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+mkdir -p ./output/video_upscale
+
+./bin/arm64/net10.0/video_upscale \
     --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
     --output ./output/video_upscale/big_buck_bunny_1080p.mp4 \
     --width 1920 \

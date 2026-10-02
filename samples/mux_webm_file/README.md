@@ -13,7 +13,7 @@ mux_webm_file --audio <Vorbis_file>.webm --video <VP8_file>.webm --output <outpu
 List options:
 
 ```sh
-./bin/net10.0/mux_webm_file --help
+./bin/x64/net10.0/mux_webm_file --help
 mux_webm_file 1.0.0.0
 
   -a, --audio     input Vorbis/WebM files. Could be a list of files.
@@ -33,7 +33,7 @@ Mux the WebM files `big-buck-bunny_trailer_vp8_vorbis.aud.webm` and `big-buck-bu
 # Linux and macOS 
 mkdir -p ./output/mux_webm_file
 
-./bin/net10.0/mux_webm_file \
+./bin/x64/net10.0/mux_webm_file \
     --audio ./assets/aud/big-buck-bunny_trailer_vp8_vorbis.aud.webm \
     --video ./assets/vid/big-buck-bunny_trailer_vp8_vorbis.vid.webm \
     --output ./output/mux_webm_file/big-buck-bunny_trailer.webm
@@ -43,7 +43,29 @@ mkdir -p ./output/mux_webm_file
 # Windows
 mkdir -Force -Path ./output/mux_webm_file
 
-./bin/net10.0/mux_webm_file `
+./bin/x64/net10.0/mux_webm_file `
+    --audio ./assets/aud/big-buck-bunny_trailer_vp8_vorbis.aud.webm `
+    --video ./assets/vid/big-buck-bunny_trailer_vp8_vorbis.vid.webm `
+    --output ./output/mux_webm_file/big-buck-bunny_trailer.webm
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/mux_webm_file
+
+./bin/arm64/net10.0/mux_webm_file \
+    --audio ./assets/aud/big-buck-bunny_trailer_vp8_vorbis.aud.webm \
+    --video ./assets/vid/big-buck-bunny_trailer_vp8_vorbis.vid.webm \
+    --output ./output/mux_webm_file/big-buck-bunny_trailer.webm
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/mux_webm_file
+
+./bin/arm64/net10.0/mux_webm_file `
     --audio ./assets/aud/big-buck-bunny_trailer_vp8_vorbis.aud.webm `
     --video ./assets/vid/big-buck-bunny_trailer_vp8_vorbis.vid.webm `
     --output ./output/mux_webm_file/big-buck-bunny_trailer.webm

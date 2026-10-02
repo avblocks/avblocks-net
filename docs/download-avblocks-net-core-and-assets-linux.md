@@ -16,8 +16,8 @@ tag="v3.4.0-demo.1"
 platform="linux"
 
 # download
-mkdir -p ./sdk/net10.0
-cd ./sdk/net10.0
+mkdir -p ./sdk/x64/net10.0
+cd ./sdk/x64/net10.0
 
 # sdk
 curl \

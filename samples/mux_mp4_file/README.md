@@ -14,7 +14,7 @@ mux_mp4_file --audio <AAC_file>.mp4 --video <H264_file>.mp4 --output <output>.mp
 List options:
 
 ```sh
-./bin/net10.0/mux_mp4_file --help
+./bin/x64/net10.0/mux_mp4_file --help
 mux_mp4_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -38,7 +38,7 @@ Multiplex the MP4 files `./assets/aud/big_buck_bunny_trailer.aud.mp4` and `./ass
 # Linux and macOS 
 mkdir -p ./output/mux_mp4_file
 
-./bin/net10.0/mux_mp4_file \
+./bin/x64/net10.0/mux_mp4_file \
     --audio ./assets/aud/big_buck_bunny_trailer.aud.mp4 \
     --video ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
     --output ./output/mux_mp4_file/big_buck_bunny_trailer.mp4
@@ -48,7 +48,29 @@ mkdir -p ./output/mux_mp4_file
 # Windows
 mkdir -Force -Path ./output/mux_mp4_file
 
-./bin/net10.0/mux_mp4_file `
+./bin/x64/net10.0/mux_mp4_file `
+    --audio ./assets/aud/big_buck_bunny_trailer.aud.mp4 `
+    --video ./assets/vid/big_buck_bunny_trailer.vid.mp4 `
+    --output ./output/mux_mp4_file/big_buck_bunny_trailer.mp4
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/mux_mp4_file
+
+./bin/arm64/net10.0/mux_mp4_file \
+    --audio ./assets/aud/big_buck_bunny_trailer.aud.mp4 \
+    --video ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
+    --output ./output/mux_mp4_file/big_buck_bunny_trailer.mp4
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/mux_mp4_file
+
+./bin/arm64/net10.0/mux_mp4_file `
     --audio ./assets/aud/big_buck_bunny_trailer.aud.mp4 `
     --video ./assets/vid/big_buck_bunny_trailer.vid.mp4 `
     --output ./output/mux_mp4_file/big_buck_bunny_trailer.mp4

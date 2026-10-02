@@ -13,7 +13,7 @@ enc_avc_push --frame <width>x<height> --rate <fps> --color <color> --input <file
 List options:
 
 ```sh
-./bin/net10.0/enc_avc_push --help
+./bin/x64/net10.0/enc_avc_push --help
 enc_avc_push 1.0.0.0
 Copyright (C) 2026 Primo Software
 
@@ -37,7 +37,7 @@ Copyright (C) 2026 Primo Software
 List supported color formats for input:
 
 ```sh
-./bin/net10.0/enc_avc_push --colors
+./bin/x64/net10.0/enc_avc_push --colors
 
 COLORS
 ---------
@@ -70,7 +70,7 @@ Encode a raw YUV video from `./assets/vid/foreman_qcif.yuv` to a H.264 video in 
 # Linux and macOS 
 mkdir -p ./output/enc_avc_push
 
-./bin/net10.0/enc_avc_push \
+./bin/x64/net10.0/enc_avc_push \
     --input ./assets/vid/foreman_qcif.yuv \
     --output ./output/enc_avc_push/foreman_qcif.h264 \
     --frame 176x144 \
@@ -82,7 +82,33 @@ mkdir -p ./output/enc_avc_push
 # Windows
 mkdir -Force -Path ./output/enc_avc_push
 
-./bin/net10.0/enc_avc_push.exe `
+./bin/x64/net10.0/enc_avc_push.exe `
+    --input assets\vid\foreman_qcif.yuv `
+    --output output\enc_avc_push\foreman_qcif.h264 `
+    --frame 176x144 `
+    --rate 30 `
+    --color yuv420
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_avc_push
+
+./bin/arm64/net10.0/enc_avc_push \
+    --input ./assets/vid/foreman_qcif.yuv \
+    --output ./output/enc_avc_push/foreman_qcif.h264 \
+    --frame 176x144 \
+    --rate 30 \
+    --color yuv420
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_avc_push
+
+./bin/arm64/net10.0/enc_avc_push.exe `
     --input assets\vid\foreman_qcif.yuv `
     --output output\enc_avc_push\foreman_qcif.h264 `
     --frame 176x144 `

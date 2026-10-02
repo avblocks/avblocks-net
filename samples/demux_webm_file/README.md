@@ -13,7 +13,7 @@ demux_webm_file --input <webm file> --output <output file name without extension
 List options:
 
 ```sh
-./bin/net10.0/demux_webm_file --help
+./bin/x64/net10.0/demux_webm_file --help
 demux_webm_file 1.0.0.0
 
   -i, --input     Input webm file
@@ -31,7 +31,7 @@ Demux the input file `./assets/mov/big-buck-bunny_trailer_vp8_vorbis.webm` into 
 # Linux and macOS 
 mkdir -p ./output/demux_webm_file
 
-./bin/net10.0/demux_webm_file \
+./bin/x64/net10.0/demux_webm_file \
   --input ./assets/mov/big-buck-bunny_trailer_vp8_vorbis.webm \
   --output ./output/demux_webm_file/big-buck-bunny_trailer_vp8_vorbis
 ```
@@ -40,7 +40,27 @@ mkdir -p ./output/demux_webm_file
 # Windows
 mkdir -Force -Path ./output/demux_webm_file
 
-./bin/net10.0/demux_webm_file `
+./bin/x64/net10.0/demux_webm_file `
+  --input ./assets/mov/big-buck-bunny_trailer_vp8_vorbis.webm `
+  --output ./output/demux_webm_file/big-buck-bunny_trailer_vp8_vorbis
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/demux_webm_file
+
+./bin/arm64/net10.0/demux_webm_file \
+  --input ./assets/mov/big-buck-bunny_trailer_vp8_vorbis.webm \
+  --output ./output/demux_webm_file/big-buck-bunny_trailer_vp8_vorbis
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/demux_webm_file
+
+./bin/arm64/net10.0/demux_webm_file `
   --input ./assets/mov/big-buck-bunny_trailer_vp8_vorbis.webm `
   --output ./output/demux_webm_file/big-buck-bunny_trailer_vp8_vorbis
 ```

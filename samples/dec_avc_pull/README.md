@@ -14,7 +14,7 @@ dec_avc_pull --input <file.h264> --output <file.yuv>
 List options:
 
 ```sh
-./bin/net10.0/dec_avc_pull --help
+./bin/x64/net10.0/dec_avc_pull --help
 dec_avc_pull 1.0.0.0
 Copyright (C) 2025 Primo Software
 
@@ -31,7 +31,7 @@ Decode the input file `./assets/vid/foreman_qcif.h264` into output file `./outpu
 # Linux and macOS 
 mkdir -p ./output/dec_avc_pull
 
-./bin/net10.0/dec_avc_pull \
+./bin/x64/net10.0/dec_avc_pull \
     --input ./assets/vid/foreman_qcif.h264 \
     --output ./output/dec_avc_pull/foreman_qcif.yuv
 ```
@@ -40,7 +40,27 @@ mkdir -p ./output/dec_avc_pull
 # Windows
 mkdir -Force -Path ./output/dec_avc_pull
 
-./bin/net10.0/dec_avc_pull `
+./bin/x64/net10.0/dec_avc_pull `
+    --input ./assets/vid/foreman_qcif.h264 `
+    --output ./output/dec_avc_pull/foreman_qcif.yuv
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_avc_pull
+
+./bin/arm64/net10.0/dec_avc_pull \
+    --input ./assets/vid/foreman_qcif.h264 \
+    --output ./output/dec_avc_pull/foreman_qcif.yuv
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_avc_pull
+
+./bin/arm64/net10.0/dec_avc_pull `
     --input ./assets/vid/foreman_qcif.h264 `
     --output ./output/dec_avc_pull/foreman_qcif.yuv
 ```

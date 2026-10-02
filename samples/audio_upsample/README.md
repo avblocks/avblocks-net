@@ -13,7 +13,7 @@ audio_upsample --input <mp3 file> --output <mp3 file>
 List options:
 
 ```sh
-./bin/net10.0/audio_upsample --help
+./bin/x64/net10.0/audio_upsample --help
 Usage: audio_upsample --input <mp3 file> --output <mp3 file>
   -h,    --help
   -i,    --input    input MP3 file
@@ -25,7 +25,17 @@ Upsample the input file `./assets/aud/Hydrate-Kenny_Beltrey.mp3` into output fil
 ```sh
 mkdir -p ./output/audio_upsample
 
-./bin/net10.0/audio_upsample \
+./bin/x64/net10.0/audio_upsample \
+    --input ./assets/aud/Hydrate-Kenny_Beltrey.mp3 \
+    --output ./output/audio_upsample/Hydrate-Kenny_Beltrey-48khz.mp3
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+mkdir -p ./output/audio_upsample
+
+./bin/arm64/net10.0/audio_upsample \
     --input ./assets/aud/Hydrate-Kenny_Beltrey.mp3 \
     --output ./output/audio_upsample/Hydrate-Kenny_Beltrey-48khz.mp3
 ```

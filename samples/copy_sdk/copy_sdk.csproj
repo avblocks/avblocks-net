@@ -6,8 +6,16 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Platforms>x64</Platforms> 
-    <OutputPath>../../bin</OutputPath> 
+    <Platforms>x64;arm64</Platforms>
+  </PropertyGroup>
+
+  <!-- Native architecture follows the build platform: native architecture (x64 or arm64) by default, or the explicit Platform. SDK files are copied from sdk/<arch>/<tfm> to bin/<arch>/<tfm> -->
+  <PropertyGroup>
+    <AVB_ARCH>x64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64' ">arm64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$(Platform)' == 'x64' ">x64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$(Platform)' == 'arm64' ">arm64</AVB_ARCH>
+    <OutputPath>../../bin/$(AVB_ARCH)</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsLinux)' == 'true' ">
@@ -29,23 +37,23 @@
   </PropertyGroup>
   
   <Target Name="CopyAVBlocksCore_Linux" AfterTargets="AfterBuild" Condition=" '$(IsLinux)' == 'true' ">
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/libAVBlocks64.so" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/libAVBlocks64.so" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clrcore.$(AVB_ARCH).dll" DestinationFolder="$(OutputPath)" />
   </Target>
 
   <Target Name="CopyAVBlocksCore_macOS" AfterTargets="AfterBuild" Condition=" '$(IsMacOS)' == 'true' ">
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/libAVBlocks.dylib" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/libAVBlocks.dylib" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clrcore.$(AVB_ARCH).dll" DestinationFolder="$(OutputPath)" />
   </Target>
 
   <Target Name="CopyAVBlocksCore_Windows_net100" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net10.0' ">
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clrcore.x64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clrcore.$(AVB_ARCH).dll" DestinationFolder="$(OutputPath)" />
   </Target>
 
   <Target Name="CopyAVBlocksCore_Windows_net48" AfterTargets="AfterBuild" Condition=" '$(IsWindows)|$(TargetFramework)' == 'true|net48' ">
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
-    <Copy SourceFiles="$(ProjectDir)../../sdk/$(TargetFramework)/AVBlocks.clr4.x64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks64.dll" DestinationFolder="$(OutputPath)" />
+    <Copy SourceFiles="$(ProjectDir)../../sdk/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clr4.$(AVB_ARCH).dll" DestinationFolder="$(OutputPath)" />
   </Target>
 
 </Project>

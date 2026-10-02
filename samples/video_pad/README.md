@@ -13,7 +13,7 @@ video_pad -i <mp4 file> -o <mp4 file> [-w <width>] [-h <height>] [-l <left>] [-r
 List options:
 
 ```sh
-./bin/net10.0/video_pad --help
+./bin/x64/net10.0/video_pad --help
 Usage: video_pad -i <mp4 file> -o <mp4 file> [-w <width>] [-h <height>] [-l <left>] [-r <right>] [-t <top>] [-b <bottom>] [-c <color>]
   -h,    --help
          --input    MP4 input file.
@@ -32,7 +32,21 @@ Add 100 pixels of black padding on all sides of `./assets/vid/big_buck_bunny_tra
 ```sh
 mkdir -p ./output/video_pad
 
-./bin/net10.0/video_pad \
+./bin/x64/net10.0/video_pad \
+    --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
+    --output ./output/video_pad/big_buck_bunny_padded.mp4 \
+    --left 100 \
+    --right 100 \
+    --top 100 \
+    --bottom 100
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+mkdir -p ./output/video_pad
+
+./bin/arm64/net10.0/video_pad \
     --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
     --output ./output/video_pad/big_buck_bunny_padded.mp4 \
     --left 100 \

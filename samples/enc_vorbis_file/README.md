@@ -13,7 +13,7 @@ enc_vorbis_file --input <wav file> --output <ogg file>
 List options:
 
 ```sh
-./bin/net10.0/enc_vorbis_file --help
+./bin/x64/net10.0/enc_vorbis_file --help
 enc_vorbis_file 1.0.0.0
 
   -i, --input     input WAV file
@@ -31,7 +31,7 @@ Encode the input file `./assets/aud/equinox-48KHz.wav` into output file `./outpu
 # Linux and macOS 
 mkdir -p ./output/enc_vorbis_file
 
-./bin/net10.0/enc_vorbis_file \
+./bin/x64/net10.0/enc_vorbis_file \
   --input ./assets/aud/equinox-48KHz.wav \
   --output ./output/enc_vorbis_file/equinox-48KHz.ogg
 ```
@@ -40,7 +40,27 @@ mkdir -p ./output/enc_vorbis_file
 # Windows
 mkdir -Force -Path ./output/enc_vorbis_file
 
-./bin/net10.0/enc_vorbis_file `
+./bin/x64/net10.0/enc_vorbis_file `
+  --input ./assets/aud/equinox-48KHz.wav `
+  --output ./output/enc_vorbis_file/equinox-48KHz.ogg
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_vorbis_file
+
+./bin/arm64/net10.0/enc_vorbis_file \
+  --input ./assets/aud/equinox-48KHz.wav \
+  --output ./output/enc_vorbis_file/equinox-48KHz.ogg
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_vorbis_file
+
+./bin/arm64/net10.0/enc_vorbis_file `
   --input ./assets/aud/equinox-48KHz.wav `
   --output ./output/enc_vorbis_file/equinox-48KHz.ogg
 ```

@@ -13,7 +13,7 @@ enc_g711_ulaw_file --input <wav file> --output <g711 ulaw wav file>
 List options:
 
 ```sh
-./bin/net10.0/enc_g711_ulaw_file --help
+./bin/x64/net10.0/enc_g711_ulaw_file --help
 enc_g711_ulaw_file 1.0.0.0
 Copyright (C) 2023 Primo Software
 
@@ -32,7 +32,7 @@ Encode the input file `./assets/aud/express-dictate_8000_s16_1ch_pcm.wav` into o
 # Linux and macOS 
 mkdir -p ./output/enc_g711_ulaw_file
 
-./bin/net10.0/enc_g711_ulaw_file \
+./bin/x64/net10.0/enc_g711_ulaw_file \
     --input ./assets/aud/express-dictate_8000_s16_1ch_pcm.wav \
     --output ./output/enc_g711_ulaw_file/express-dictate_g711_ulaw.wav
 ```
@@ -41,7 +41,27 @@ mkdir -p ./output/enc_g711_ulaw_file
 # Windows
 mkdir -Force -Path ./output/enc_g711_ulaw_file
 
-./bin/net10.0/enc_g711_ulaw_file `
+./bin/x64/net10.0/enc_g711_ulaw_file `
+    --input ./assets/aud/express-dictate_8000_s16_1ch_pcm.wav `
+    --output ./output/enc_g711_ulaw_file/express-dictate_g711_ulaw.wav
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/enc_g711_ulaw_file
+
+./bin/arm64/net10.0/enc_g711_ulaw_file \
+    --input ./assets/aud/express-dictate_8000_s16_1ch_pcm.wav \
+    --output ./output/enc_g711_ulaw_file/express-dictate_g711_ulaw.wav
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/enc_g711_ulaw_file
+
+./bin/arm64/net10.0/enc_g711_ulaw_file `
     --input ./assets/aud/express-dictate_8000_s16_1ch_pcm.wav `
     --output ./output/enc_g711_ulaw_file/express-dictate_g711_ulaw.wav
 ```

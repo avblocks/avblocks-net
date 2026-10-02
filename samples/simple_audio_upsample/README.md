@@ -22,7 +22,7 @@ From the repository root:
 dotnet build samples.sln
 ```
 
-The built executable will be placed in `bin/net10.0/simple_audio_upsample` (or `bin/net10/simple_audio_upsample.exe` on Windows).
+The built executable will be placed in `bin/<arch>/net10.0/simple_audio_upsample` (or `bin/<arch>/net10.0/simple_audio_upsample.exe` on Windows), where `<arch>` is `x64` or `arm64`.
 
 ## Running
 
@@ -37,7 +37,13 @@ The built executable will be placed in `bin/net10.0/simple_audio_upsample` (or `
 2. Run the sample from the sample directory (the input/output file paths are relative to the working directory):
 
     ```sh
-    ../../bin/net10.0/simple_audio_upsample
+    ../../bin/x64/net10.0/simple_audio_upsample
+    ```
+
+   On ARM platforms use the arm64 build:
+
+    ```sh
+    ../../bin/arm64/net10.0/simple_audio_upsample
     ```
 
 3. The upsampled output file `kahvi011_kennybeltrey-hydrate_48Khz.mp3` will be created in the `samples/simple_audio_upsample` directory.

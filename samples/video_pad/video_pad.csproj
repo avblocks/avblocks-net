@@ -9,8 +9,16 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Platforms>x64</Platforms>
-    <OutputPath>../../bin</OutputPath>
+    <Platforms>x64;arm64</Platforms>
+  </PropertyGroup>
+
+  <!-- Native architecture follows the build platform: native architecture (x64 or arm64) by default, or the explicit Platform. Output goes to bin/<arch>/<tfm> -->
+  <PropertyGroup>
+    <AVB_ARCH>x64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64' ">arm64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$(Platform)' == 'x64' ">x64</AVB_ARCH>
+    <AVB_ARCH Condition=" '$(Platform)' == 'arm64' ">arm64</AVB_ARCH>
+    <OutputPath>../../bin/$(AVB_ARCH)</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsLinux)' == 'true' ">
@@ -26,14 +34,14 @@
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
-    <Reference Include="AVBlocks.clr4.x64.dll">
-      <HintPath>../../bin/$(TargetFramework)/AVBlocks.clr4.x64.dll</HintPath>
+    <Reference Include="AVBlocks.clr4.$(AVB_ARCH).dll">
+      <HintPath>../../bin/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clr4.$(AVB_ARCH).dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' != 'net48' ">
-    <Reference Include="AVBlocks.clrcore.x64">
-      <HintPath>../../bin/$(TargetFramework)/AVBlocks.clrcore.x64.dll</HintPath>
+    <Reference Include="AVBlocks.clrcore.$(AVB_ARCH)">
+      <HintPath>../../bin/$(AVB_ARCH)/$(TargetFramework)/AVBlocks.clrcore.$(AVB_ARCH).dll</HintPath>
     </Reference>
   </ItemGroup>
 

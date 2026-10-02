@@ -14,7 +14,7 @@ dec_avc_au --input <directory> --output <file.yuv> [--color <COLOR>]
 List options:
 
 ```sh
-./bin/net10.0/dec_avc_au --help
+./bin/x64/net10.0/dec_avc_au --help
 dec_avc_au 1.0.0.0
 Copyright (C) 2025 Primo Software
 
@@ -32,7 +32,7 @@ Copyright (C) 2025 Primo Software
 List supported color formats:
 
 ```sh
-./bin/net10.0/dec_avc_au --colors
+./bin/x64/net10.0/dec_avc_au --colors
 ```
 
 Decode the H.264 Access Units from `./assets/vid/foreman_qcif.h264.au/` into output file `./output/dec_avc_au/foreman_qcif.yuv`:
@@ -41,7 +41,7 @@ Decode the H.264 Access Units from `./assets/vid/foreman_qcif.h264.au/` into out
 # Linux and macOS 
 mkdir -p ./output/dec_avc_au
 
-./bin/net10.0/dec_avc_au \
+./bin/x64/net10.0/dec_avc_au \
     --input ./assets/vid/foreman_qcif.h264.au \
     --output ./output/dec_avc_au/foreman_qcif.yuv \
     --color yuv420
@@ -51,7 +51,29 @@ mkdir -p ./output/dec_avc_au
 # Windows
 mkdir -Force -Path ./output/dec_avc_au
 
-./bin/net10.0/dec_avc_au `
+./bin/x64/net10.0/dec_avc_au `
+    --input ./assets/vid/foreman_qcif.h264.au `
+    --output ./output/dec_avc_au/foreman_qcif.yuv `
+    --color yuv420
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_avc_au
+
+./bin/arm64/net10.0/dec_avc_au \
+    --input ./assets/vid/foreman_qcif.h264.au \
+    --output ./output/dec_avc_au/foreman_qcif.yuv \
+    --color yuv420
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_avc_au
+
+./bin/arm64/net10.0/dec_avc_au `
     --input ./assets/vid/foreman_qcif.h264.au `
     --output ./output/dec_avc_au/foreman_qcif.yuv `
     --color yuv420

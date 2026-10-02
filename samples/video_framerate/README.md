@@ -13,7 +13,7 @@ video_framerate --input <mp4 file> --output <mp4 file> [--frame-rate <fps>]
 List options:
 
 ```sh
-./bin/net10.0/video_framerate --help
+./bin/x64/net10.0/video_framerate --help
 Usage: video_framerate -i <mp4 file> -o <mp4 file> [-f <fps>]
   -h,    --help
          --input        MP4 input file.
@@ -26,7 +26,18 @@ Change the frame rate of the input file `./assets/vid/big_buck_bunny_trailer.vid
 ```sh
 mkdir -p ./output/video_framerate
 
-./bin/net10.0/video_framerate \
+./bin/x64/net10.0/video_framerate \
+    --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
+    --output ./output/video_framerate/big_buck_bunny_30fps.mp4 \
+    --frame-rate 30.0
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+mkdir -p ./output/video_framerate
+
+./bin/arm64/net10.0/video_framerate \
     --input ./assets/vid/big_buck_bunny_trailer.vid.mp4 \
     --output ./output/video_framerate/big_buck_bunny_30fps.mp4 \
     --frame-rate 30.0

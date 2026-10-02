@@ -13,7 +13,7 @@ dec_opus_file --input <opus file> --output <wav file>
 List options:
 
 ```sh
-./bin/net10.0/dec_opus_file --help
+./bin/x64/net10.0/dec_opus_file --help
 dec_opus_file 1.0.0.0
 
   -i, --input     input Opus file
@@ -31,7 +31,7 @@ Decode the input file `./assets/aud/Everybody-TBB.opus` into output file `./outp
 # Linux and macOS 
 mkdir -p ./output/dec_opus_file
 
-./bin/net10.0/dec_opus_file \
+./bin/x64/net10.0/dec_opus_file \
   --input ./assets/aud/Everybody-TBB.opus \
   --output ./output/dec_opus_file/Everybody-TBB.wav
 ```
@@ -40,7 +40,27 @@ mkdir -p ./output/dec_opus_file
 # Windows
 mkdir -Force -Path ./output/dec_opus_file
 
-./bin/net10.0/dec_opus_file `
+./bin/x64/net10.0/dec_opus_file `
+  --input ./assets/aud/Everybody-TBB.opus `
+  --output ./output/dec_opus_file/Everybody-TBB.wav
+```
+
+On ARM platforms use the arm64 build:
+
+```sh
+# Linux and macOS (arm64) 
+mkdir -p ./output/dec_opus_file
+
+./bin/arm64/net10.0/dec_opus_file \
+  --input ./assets/aud/Everybody-TBB.opus \
+  --output ./output/dec_opus_file/Everybody-TBB.wav
+```
+
+```powershell
+# Windows (arm64)
+mkdir -Force -Path ./output/dec_opus_file
+
+./bin/arm64/net10.0/dec_opus_file `
   --input ./assets/aud/Everybody-TBB.opus `
   --output ./output/dec_opus_file/Everybody-TBB.wav
 ```
