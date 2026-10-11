@@ -10,10 +10,21 @@
             "request": "launch",
             "preLaunchTask": "samples (build)",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/net10.0/enc_aac_adts_file.dll",
+            "program": "${workspaceFolder}/bin/x64/net10.0/enc_aac_adts_file.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "enc_aac_adts_file (.NET 10.0) arm64",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "samples (build arm64)",
+            "program": "${workspaceFolder}/bin/arm64/net10.0/enc_aac_adts_file.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false
         },

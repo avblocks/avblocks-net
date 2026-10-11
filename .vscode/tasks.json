@@ -14,5 +14,37 @@
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
         },
+        {
+            "label": "samples (build x64)",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/samples.sln",
+                "-c",
+                "Debug",
+                "-p:Platform=x64",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "samples (build arm64)",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/samples.sln",
+                "-c",
+                "Debug",
+                "-p:Platform=arm64",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        }
     ]
 }
