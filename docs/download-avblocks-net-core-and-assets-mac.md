@@ -6,6 +6,16 @@ Change to the directory where you cloned this repository:
 cd avblocks-net
 ```
 
+## Script
+
+To download the SDK and the assets for the host OS and architecture in one step, run from the repository root:
+
+```bash
+./download-sdk-and-assets.sh
+```
+
+The SDK is extracted into `sdk/<arch>/net10.0` and the assets into `assets/`. To change the release, edit `tag` at the top of the script. The manual steps below do the same.
+
 ## AVBlocks .NET Core
 
 In the script below, change the tag to the release that you need. For the available versions check the [AVBlocks .NET Core](https://github.com/avblocks/avblocks-net-core/releases) releases.   

@@ -15,7 +15,13 @@ Download and extract the AVBlocks .NET demo version and the demo assets for your
 
 For the available versions check the [AVBlocks .NET Core](https://github.com/avblocks/avblocks-net-core/releases) releases.
 
+## Download script
+
+To download the SDK and the assets for the host OS and architecture in one step, run `./download-sdk-and-assets.sh` (macOS and Linux) or `./download-sdk-and-assets.ps1` (Windows, PowerShell). The SDK is extracted into `sdk/<arch>/net10.0` and the assets into `assets/`. The manual steps for each platform follow.
+
 ## Linux
+
+### x64
 
 ```bash
 # select version and platform
@@ -25,6 +31,38 @@ platform="linux"
 # download
 mkdir -p ./sdk/x64/net10.0
 cd ./sdk/x64/net10.0
+
+# sdk
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz
+
+# sha256 checksum
+curl \
+  --location \
+  --output ./avblocks-net10.0-$tag-$platform.tar.gz.sha256 \
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.tar.gz.sha256
+
+# verify sha256 checksum
+shasum --check ./avblocks-net10.0-$tag-$platform.tar.gz.sha256
+
+# extract
+tar -xvf avblocks-net10.0-$tag-$platform.tar.gz
+
+cd ../..
+```
+
+### arm64
+
+```bash
+# select version and platform
+tag="v3.4.0-demo.1"
+platform="linux-arm64"
+
+# download
+mkdir -p ./sdk/arm64/net10.0
+cd ./sdk/arm64/net10.0
 
 # sdk
 curl \
@@ -117,6 +155,8 @@ cd ../..
 
 > Scripts are PowerShell
 
+### x64
+
 ```powershell
 # select version and platform
 $tag='v3.4.0-demo.1'
@@ -149,7 +189,41 @@ expand-archive -Force -Path avblocks-net10.0-$tag-$platform.zip -DestinationPath
 cd ../..
 ```
 
-On Windows you can also download the .NET Framework 4.8 build (`avblocks-net48-$tag-$platform.zip`) into `sdk/x64/net48`.
+### arm64
+
+```powershell
+# select version and platform
+$tag='v3.4.0-demo.1'
+$platform='windows-arm64'
+
+# download
+new-item -Force -ItemType Directory ./sdk/arm64/net10.0
+cd ./sdk/arm64/net10.0
+
+# sdk
+curl.exe `
+  --location `
+  --output ./avblocks-net10.0-$tag-$platform.zip `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip
+
+# sha256 checksum
+curl.exe `
+  --location `
+  --output ./avblocks-net10.0-$tag-$platform.zip.sha256 `
+  https://github.com/avblocks/avblocks-net-core/releases/download/$tag/avblocks-net10.0-$tag-$platform.zip.sha256
+
+# verify checksum
+$downloadedHash = (Get-FileHash -Algorithm SHA256 ./avblocks-net10.0-$tag-$platform.zip).Hash.ToLower()
+$expectedHash = (Get-Content ./avblocks-net10.0-$tag-$platform.zip.sha256).Split(' ')[0].ToLower()
+if ($downloadedHash -eq $expectedHash) { Write-Host "Checksum OK!"; } else { Write-Host "Checksum failed!"; }
+
+# unzip
+expand-archive -Force -Path avblocks-net10.0-$tag-$platform.zip -DestinationPath .
+
+cd ../..
+```
+
+On Windows you can also download the .NET Framework 4.8 build (`avblocks-net48-$tag-$platform.zip`) into `sdk/x64/net48` (or `sdk/arm64/net48` with the `windows-arm64` package).
 
 ## Assets
 
