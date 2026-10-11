@@ -42,8 +42,7 @@ mkdir -Force -Path ./output/dec_avc_file
 
 ./bin/x64/net10.0/dec_avc_file `
     --input ./assets/vid/foreman_qcif.h264 `
-    --output ./output/dec_avc_file/foreman_qcif.yuv `
-    --frame 176x144 --rate 30 --color yuv420 
+    --output ./output/dec_avc_file/foreman_qcif.yuv
 ```
 
 On ARM platforms use the arm64 build:
@@ -63,6 +62,5 @@ mkdir -Force -Path ./output/dec_avc_file
 
 ./bin/arm64/net10.0/dec_avc_file `
     --input ./assets/vid/foreman_qcif.h264 `
-    --output ./output/dec_avc_file/foreman_qcif.yuv `
-    --frame 176x144 --rate 30 --color yuv420 
+    --output ./output/dec_avc_file/foreman_qcif.yuv
 ```

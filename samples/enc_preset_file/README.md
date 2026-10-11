@@ -1,11 +1,11 @@
-## enc_yuv_preset_file
+## enc_preset_file
 
 Shows how to convert a raw YUV video file and to a compressed video file. The format of the output is configured with an AVBlocks preset.
 
 ### Command Line
 
 ```sh
-enc_preset_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file> --output <filename_without_extension> [--preset <PRESET>] [--colors] [--presets]
+enc_preset_file --frame <width>x<height> --rate <fps> --color <COLOR> --input <file> --output <output file> [--preset <PRESET>] [--colors] [--presets]
 ```
 
 ###	Examples
@@ -47,7 +47,7 @@ mkdir -p ./output/enc_preset_file
 ./bin/x64/net10.0/enc_preset_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --frame 176x144 --rate 30 --color yuv420 \
-    --output ./output/enc_avc_file/foreman_qcif.h264 \
+    --output ./output/enc_preset_file/foreman_qcif.mp4 \
     --preset ipad.mp4.h264.720p
 ```
 
@@ -58,7 +58,7 @@ mkdir -Force -Path ./output/enc_preset_file
 ./bin/x64/net10.0/enc_preset_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --frame 176x144 --rate 30 --color yuv420 `
-    --output ./output/enc_avc_file/foreman_qcif.h264 `
+    --output ./output/enc_preset_file/foreman_qcif.mp4 `
     --preset ipad.mp4.h264.720p
 ```
 
@@ -71,7 +71,7 @@ mkdir -p ./output/enc_preset_file
 ./bin/arm64/net10.0/enc_preset_file \
     --input ./assets/vid/foreman_qcif.yuv \
     --frame 176x144 --rate 30 --color yuv420 \
-    --output ./output/enc_avc_file/foreman_qcif.h264 \
+    --output ./output/enc_preset_file/foreman_qcif.mp4 \
     --preset ipad.mp4.h264.720p
 ```
 
@@ -82,7 +82,7 @@ mkdir -Force -Path ./output/enc_preset_file
 ./bin/arm64/net10.0/enc_preset_file `
     --input ./assets/vid/foreman_qcif.yuv `
     --frame 176x144 --rate 30 --color yuv420 `
-    --output ./output/enc_avc_file/foreman_qcif.h264 `
+    --output ./output/enc_preset_file/foreman_qcif.mp4 `
     --preset ipad.mp4.h264.720p
 ```
 
@@ -116,7 +116,7 @@ yuv444a              Planar Y, U, V, Alpha (4:4:4)
 yvu9                 Planar Y, V, U, 9 bits per sample
 ```
 
-List supported presets for input:
+List supported output presets:
 
 ```sh
 ./bin/x64/net10.0/enc_preset_file --presets
