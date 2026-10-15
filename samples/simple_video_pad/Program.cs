@@ -81,9 +81,9 @@ namespace SimpleVideoPad
                 // Set Pad.Top and Pad.Bottom
                 // The input video is 16:9, 854 x 480,
                 // to squeeze it in 640 x 480 and keep the 16:9 display ratio,
-                // the height has to be: 640 * 9 / 16
+                // the height has to be: 640 * 9 / 16 = 360
                 // Pad by (480 - 640 * 9 / 16) / 2 pixels on each side.
-                int padAmount = (480 - 640 * 9 / 16) / 2; // 105
+                int padAmount = (480 - 640 * 9 / 16) / 2; // 60
                 outVideoPin.Params.Add(Param.Video.Pad.Top, padAmount);
                 outVideoPin.Params.Add(Param.Video.Pad.Bottom, padAmount);
 
